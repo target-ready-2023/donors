@@ -1,21 +1,21 @@
-.App-logo {
+ .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.page-spacing {
+/* .page-spacing {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-.App-header {
+}  */
+/* .App-header {
   background: #6c88c8;
   font-size: 16px;
   color: white;
   display: flex;
-}
-.App-header img {
+} */
+/* .App-header img {
   max-height: 70px;
-}
-.App-footer {
+} */
+/* .App-footer {
   background-color: #6c88c8;
   font-size: 16px;
   bottom: 0;
@@ -23,18 +23,18 @@
   width: 100%;
   text-align: center;
   padding: 25px;
-}
-.App-footer a {
+} */
+/* .App-footer a {
   color: white !important;
   text-decoration: none !important;
   text-transform: uppercase;
   margin-right: 30px;
   font-size: 16px;
-}
-#side-navigation {
+} */
+/* #side-navigation {
   position: absolute;
-  right: 0;
-  top: 15px;
+  right: 2;
+  top: 10px;
   color: #fff;
 }
 .App-Card {
@@ -44,4 +44,7 @@
 .App-Card a {
   margin-right: 20px;
   text-decoration: none !important;
+} */
+.App{
+  background-color: #6c88c8 ;
 }

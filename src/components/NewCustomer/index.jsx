@@ -44,32 +44,35 @@ const NewCustomer = () => {
     <React.Fragment>
       <div
         style={{
-          marginLeft: "500px",
-          marginTop: "2%",
+            
+          marginLeft: "400px",
+          marginTop: "5%",
+         
           display: "flex",
-          width: "600px",
+          width: "800px",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
           borderRadius: "10px",
           border: "3px solid",
+        //   marginBottom:"100%",// look into that
         }}
       >
-        <h2>
+        <h2 style={{color:"white"}}>
           <center>New Customer</center>
         </h2>
         <hr style={{ width: "100%", borderTop: "3px solid black" }}></hr>
         <form onSubmit={handleSubmit} action={<Link to="/existingCustomer" />}>
           <Stack
-            spacing={2}
+            spacing={8}
             direction="row"
             sx={{ marginTop: 4, marginBottom: 4 }}
           >
             <TextField
               type="text"
               variant="outlined"
-              style={{ Color: "#6c88c8" }}
+              style={{ color:"#6c88c8"}}
               label="Name"
               onChange={(e) => setName(e.target.value)}
               value={Name}
@@ -87,7 +90,7 @@ const NewCustomer = () => {
               required
             />
           </Stack>
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 0 }}>
+          <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
             <TextField
               type="email"
               variant="outlined"
@@ -111,7 +114,7 @@ const NewCustomer = () => {
               sx={{ mb: 4 }}
             />
           </Stack>
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 0 }}>
+          <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
             <TextField
               type="text"
               variant="outlined"
@@ -136,7 +139,7 @@ const NewCustomer = () => {
               sx={{ mb: 4 }}
             />
           </Stack>
-          <Stack spacing={2} direction="row" sx={{ marginBottom: 0 }}>
+          <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
           <TextField  select required="true"  label="Transaction mode"  fullWidth  sx={{ mb: 4 }}   variant="outlined"
               style={{ Color: "#6c88c8" }}>
       {options.map((option) => (
@@ -158,7 +161,7 @@ const NewCustomer = () => {
           </Stack>
           <Button
             variant="outlined"
-            style={{ Color: "#6c88c8", marginLeft: "5%", marginBottom: "4%" }}
+            style={{ color: "white", marginLeft: "4%", marginBottom: "5%",backgroundColor:"blue",paddingLeft:"30px",paddingRight:"30px" }}
             type="submit"
           >
             Submit

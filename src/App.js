@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <PageRoutes/>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

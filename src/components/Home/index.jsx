@@ -5,7 +5,7 @@ import { Box, Button, Container, Grid } from '@mui/material';
 
 const Home = () => {
     return (
-        <Grid container spacing={2} columns={16} style={{ padding: '20px' }}>
+        <Grid container spacing={2} columns={16} style={{ padding: '135px' }}>
             <Grid item xs={8} >
                 <div
                     style={{

@@ -11,7 +11,7 @@ import Header from "./Header"
 const PageRoutes = () => {
     return (
         <Routes>
-          <Route exact path="/" element={<><Header/><Home /></>} />
+          <Route exact path="/" element={<><Home /></>} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/certificate" element={<><Header title="Tax Preparation"/><Certificate /></>} />
           <Route exact path="/newCustomer" element={<><Header title="New Customer"/><NewCustomer /></>} />
