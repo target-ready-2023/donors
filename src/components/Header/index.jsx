@@ -5,7 +5,7 @@ import Logo from "../Logo";
 
 const Header = (props) => {
   return (
-    <AppBar position="static" style={{ backgroundColor: '#6c88c8' }}>
+    <AppBar position="static" style={{ backgroundColor: '#0f3923' }}>
      
       <Toolbar>
        
