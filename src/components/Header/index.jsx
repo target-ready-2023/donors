@@ -1,19 +1,24 @@
 // import Logo from "../Logo";
 // import SideNavigation from "../SideNavigation";
 import { Toolbar, AppBar, Typography } from "@mui/material";
+import Logo from "../Logo";
 
 const Header = (props) => {
   return (
-    <AppBar position="static" style={{ backgroundColor: 'white' }}>
+    <AppBar position="static" style={{ backgroundColor: '#6c88c8' }}>
+     
       <Toolbar>
-        <Typography variant="h4" marginLeft="100px" color="#6c88c8" >
+       
+        <Typography>
+        <Logo/>
+        </Typography>
+        <Typography variant="h3"  marginLeft="50px"  color="white">
+        Dream School Foundation 
+        </Typography>
+        <Typography variant="h4" marginLeft="100px" color="white" >
           {props.title}
-         
         </Typography>
-        <Typography variant="h3"  marginLeft="350px"  color="#6c88c8">
-          Dream School Foundation
-         
-        </Typography>
+       
        
       
          
