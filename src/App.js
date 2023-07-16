@@ -9,9 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
         <PageRoutes/>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

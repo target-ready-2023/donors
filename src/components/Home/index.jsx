@@ -5,7 +5,7 @@ import { Box, Button, Container, Grid } from '@mui/material';
 
 const Home = () => {
     return (
-        <Grid container spacing={2} columns={16} style={{ padding: '20px' }}>
+        <Grid container spacing={2} columns={16} style={{ padding: '154px' }}>
             <Grid item xs={8} >
                 <div
                     style={{
@@ -19,17 +19,17 @@ const Home = () => {
                     }}
                 >
                     <Logo />
-                    <h1 style={{ marginTop: "20px", marginBottom: "40px" }}>
+                    <h1 style={{ marginTop: "20px", marginBottom: "40px",color:"white" }}>
                         Dream School Foundation
                     </h1>
-                    <p style={{ marginBottom: "20px" }}>
+                    <p style={{ marginBottom: "20px",color:"white" }}>
                         Established in Banglore by a group of passionate volunteers
                     </p>
-                    <h3 style={{ marginTop: "10px", marginBottom: "10px" }}>
+                    <h3 style={{ marginTop: "10px", marginBottom: "10px" ,color:"white"}}>
                         CONTACT US
                     </h3>
-                    <hr style={{ width: "100%", borderTop: "3px solid black" }}></hr>
-                    <p style={{ fontWeight: "bold", marginTop: "10px 0" }}>
+                    <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
+                    <p style={{ fontWeight: "bold", marginTop: "10px 0",color:"white" }}>
                         123, Hennur Road, Banglore
                         <br />
                         Phone: +91-1234567890
@@ -44,10 +44,10 @@ const Home = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        textAlign: 'center', borderRadius: "10px",  padding: '10px', border:'3px solid', marginBottom:'40px'
+                        textAlign: 'center', borderRadius: "10px",  padding: '10px', border:'3px solid white', marginBottom:'40px'
                     }} >
-                        <h2>DONATE</h2>
-                        <hr style={{ width: "100%", borderTop: "3px solid black" }}></hr>
+                        <h2 style={{color:"white"}}>DONATE</h2>
+                        <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
                         <Link to="/newCustomer" style={{ textDecoration: 'none' }}>
                             <Button variant="contained" sx={{ borderRadius: '20px', marginBottom: '10px', width:'200px'}} >
                                 New Customer
@@ -66,16 +66,16 @@ const Home = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        textAlign: 'center', borderRadius: "10px",  padding: '10px', border:'3px solid'
+                        textAlign: 'center', borderRadius: "10px",  padding: '10px', border:'3px solid white'
                     }} >
-                        <h2>Tax Preperation</h2>
-                        <hr style={{ width: "100%", borderTop: "3px solid black" }}></hr>
+                        <h2 style={{color:"white"}}>Tax Preperation</h2>
+                        <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
                         <Link to="/certificate" style={{ textDecoration: 'none' }}>
                             <Button variant="contained" sx={{ borderRadius: '20px', marginBottom: '10px', width:'200px'}} >
                                 80G Certificate
                             </Button>
                         </Link>
-                        <p style={{fontWeight:'bold'}}>We prepare everything for your tax need</p>
+                        <p style={{fontWeight:'bold',color:"white"}}>We prepare everything for your tax need</p>
                        
                     </div>
                 </div>
