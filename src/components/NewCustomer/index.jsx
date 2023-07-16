@@ -55,13 +55,13 @@ const NewCustomer = () => {
             justifyContent: "center",
             textAlign: "center",
             borderRadius: "10px",
-            border: "4px solid white",
+            border: "3px solid white",
           }}
         >
           <h2 style={{ color: "white" }}>
             <center>New Customer</center>
           </h2>
-          <hr style={{ width: "100%", borderTop: "4px solid white" }}></hr>
+          <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
           <form
             onSubmit={handleSubmit}
             action={<Link to="/existingCustomer" />}
@@ -82,7 +82,7 @@ const NewCustomer = () => {
                 required
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1}
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -96,7 +96,7 @@ const NewCustomer = () => {
                 required
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1}
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -112,7 +112,7 @@ const NewCustomer = () => {
                 required
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -126,7 +126,7 @@ const NewCustomer = () => {
                 required
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -143,7 +143,7 @@ const NewCustomer = () => {
                 required
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
                 }}
               />
 
@@ -172,7 +172,7 @@ const NewCustomer = () => {
              
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
                 }}
               >
                 {options.map((option) => (
@@ -193,7 +193,7 @@ const NewCustomer = () => {
                 
                 sx={{
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
                 }}
               />
             </Stack>
