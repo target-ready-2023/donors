@@ -5,16 +5,16 @@ use donor;
 create table profile(
 	ID int not null primary key AUTO_INCREMENT,
 	PName varchar(255) not null,
-	Address varchar(255),
-	DOB date,
-	Email varchar(255),
-	PAN varchar(10)
+	Address varchar(255) default null,
+	DOB date default null,
+	Email varchar(255) unique,
+	PAN varchar(10) unique not null
 );
 
 create table transactions(
-	InvoiceID int primary key not null AUTO_INCREMENT,
+    InvoiceID int primary key not null AUTO_INCREMENT,
     ID int not null,
-    Amount int,
+    Amount decimal(10, 2),
     TransactionMode varchar(20),
     TransactionDate date,
     TransactionID int not null,
