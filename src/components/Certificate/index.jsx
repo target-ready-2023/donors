@@ -40,12 +40,12 @@ const EightyGCertificate = () => {
         <div>
           <label style={{ color: 'white' }}>
             <span style={{marginRight:'5px'}}>Donor ID:</span>
-            <input type="text" value={donorId} onChange={handleDonorIdChange} />
+            <input type="text" value={donorId} onChange={handleDonorIdChange} style={{marginRight:'15px'}} />
           </label>
           
           <label style={{ color: 'white' }}>
           <span style={{marginLeft:'5px'}}>Fiscal Year:</span>
-            <select value={fiscalYear} onChange={handleFiscalYearChange}>
+            <select value={fiscalYear} onChange={handleFiscalYearChange} style={{marginLeftt:'15px'}}>
               {years.map((year) => (
                 <option key={year} value={year}>
                   {year}
