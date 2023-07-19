@@ -30,7 +30,7 @@ public class CustomerController {
         }
 
         @GetMapping("/getCustomerInfoById/{email}")
-      public List<OrderResponse> getAllTransaction(@PathVariable String email){
+        public List<OrderResponse> getAllTransaction(@PathVariable String email){
             return customerRepository.getInfoById(email);
         }
 
