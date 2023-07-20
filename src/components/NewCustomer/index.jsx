@@ -8,13 +8,20 @@ const options = [
     value: 1,
   },
   {
-    label: "DEBIT CARD",
+    label: "IMPS",
     value: 2,
   },
   {
-    label: "NET BANKING",
+    label: "DEBIT",
     value: 3,
   },
+  {
+    label:"CREDIT",
+    value: 4,
+  },{
+    label:"NEFT",
+    value :5
+  }
 ];
 
 
