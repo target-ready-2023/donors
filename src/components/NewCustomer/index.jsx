@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Stack, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const options = [
   {
@@ -37,6 +38,14 @@ const NewCustomer = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    setName("");
+    setAddress("");
+    setEmail("");
+    setDateOfBirth("");
+    setPAN("");
+    setDate("");
+    setAmount("");
+    setTransaction(options[0]);
     console.log(
       Name,
       Address,
@@ -47,6 +56,14 @@ const NewCustomer = () => {
       Transaction,
       Date
     );
+    swal({
+      title: `Hello !!`,
+      text: "You have successfully added !",
+      icon: "success",
+      buttons:{
+        Ok: {text: "Great !"}
+      }
+    })
   }
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, MenuItem, Grid, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TextField, Stack, Button, MenuItem, Grid, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 const options = [
   {
     label: "UPI",
@@ -22,12 +22,10 @@ const ExistingCostumerPage = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
-  const [dateOfBirth, setDateOfBirth] = useState('');
   const [pan, setPan] = useState('');
   const [amount, setAmount] = useState('');
   const [transactionMode, setTransactionMode] = useState('');
   const [date, setDate] = useState('');
-  const [details, setDetails] = useState('');
 
   const fetchDonorDetails = async () => {
     try {
@@ -37,25 +35,15 @@ const ExistingCostumerPage = () => {
       if (data) {
         setName(data.name);
         setAddress(data.address);
-        setDateOfBirth(data.dateOfBirth);
         setPan(data.pan);
       }
     } catch (error) {
       console.error('Error fetching donor details:', error);
-      // Handle error
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform any required logic or API calls with the transaction details
-
-    setName('John'); 
-    setAddress('target,Banglore');
-    setDateOfBirth('05/10/2001');
-    setPan('ABCDE1234F');
-    
-    setDetails(fetchDonorDetails);
     
     setDate(''); 
     setTransactionMode('');
@@ -65,7 +53,7 @@ const ExistingCostumerPage = () => {
 
   return (
     <React.Fragment>
-    <div style={{ padding: "70px " }}>
+    <div style={{ padding: "50px " }}>
       <div
         style={{
           margin: "0 auto",
@@ -75,21 +63,21 @@ const ExistingCostumerPage = () => {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          borderRadius: "10px",
+          borderRadius: "6px",
           border: "3px solid white",
         }}
       >
         <h2 style={{ color: "white" }}>
           <center>Existing Customer</center>
         </h2>
-        <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
+        <hr style={{ width: "100%", borderTop: "2px solid white" }}></hr>
         <form
             onSubmit={handleSubmit}
             style={{ color: "white" }}
           >
             
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
+    <Grid container spacing={1}>
+      <Grid item xs={12} >
         <TableContainer>
           <Table sx={{tableLayout: "auto"}}>
             <TableHead>
@@ -104,7 +92,6 @@ const ExistingCostumerPage = () => {
                 <TableCell>Donor ID</TableCell>
                 <TableCell>Email ID</TableCell>
                 <TableCell>Name</TableCell>
-                <TableCell>DOB</TableCell>
                 <TableCell>Address</TableCell>
                 <TableCell>PAN</TableCell>
               </TableRow>
@@ -114,13 +101,12 @@ const ExistingCostumerPage = () => {
                 <TableCell>
                   
                   <TextField 
-                 fullWidth
-                   placeholder="Enter your Donar Id"
+                 fullWidth required
+                   placeholder="Your Donar-Id"
                    margin="normal"
                    variant="filled"
                    color="primary"
                    label="Donar-Id"
-                    required
                     value={donorId}
                     onChange={(e) => setDonorId(e.target.value)}
                     sx={{
@@ -134,7 +120,7 @@ const ExistingCostumerPage = () => {
                     
                   <TextField
                    fullWidth
-                   placeholder="Enter your Email Id"
+                   placeholder="Your Email Id"
                    margin="normal"
                    variant="filled"
                    color="primary"
@@ -151,7 +137,6 @@ const ExistingCostumerPage = () => {
                 </TableCell>
                 <TableCell>{name}</TableCell>
                 <TableCell>{address}</TableCell>
-                <TableCell>{dateOfBirth}</TableCell>
                 <TableCell>{pan}</TableCell>
               </TableRow>
             </TableBody>
@@ -164,6 +149,7 @@ const ExistingCostumerPage = () => {
               style={{
                 color: "white",
                 marginLeft: "1%",
+                marginTop:"1%",
                 marginBottom: "1%",
                 backgroundColor: "blue",
                 paddingLeft: "30px",
@@ -175,19 +161,21 @@ const ExistingCostumerPage = () => {
               Fetch Details
             </Button>
       </Grid>
-      <Grid item xs={12}>
+
+     
+      <Grid xs={12} item >
       <TextField
                 type="number"
                 variant="filled"
-            
                 label="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
                 fullWidth
                 required
                 sx={{
+                  width: {sm: 750, md: 600},
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:2
                 }}
               />
       </Grid>
@@ -198,10 +186,11 @@ const ExistingCostumerPage = () => {
                 label="Transaction mode"
                 fullWidth
                 variant="filled"
-             
+                value={transactionMode}
                 sx={{
+                  width: {sm: 750, md: 600},
                   "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:2
                 }}
               >
                 {options.map((option) => (
@@ -213,20 +202,23 @@ const ExistingCostumerPage = () => {
       </Grid>
       <Grid item xs={12}>
       <TextField
-                type="date"
-              
-                variant="filled"
-                label="Date"
-                onChange={(e) => setDate(e.target.value)}
-                value={Date}
-                fullWidth
-                required
-                
-                sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
-                }}
-              />
+          type="date"
+          required
+          variant='filled'
+          label="Date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          fullWidth
+          sx={{
+            width: {sm: 750, md: 600},
+            "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
+            "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:1
+          }}
+          InputLabelProps={{
+            shrink: true,
+            
+          }}
+        />
       </Grid>
       <Grid item xs={12}>
       <Button
@@ -241,8 +233,7 @@ const ExistingCostumerPage = () => {
               }}
               type="submit"
               onClick={handleSubmit}
-            >
-              Submit
+            >Submit
             </Button>
       </Grid>
     </Grid>
