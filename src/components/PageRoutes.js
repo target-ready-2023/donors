@@ -6,16 +6,16 @@ import NewCustomer from "./NewCustomer"
 import ExistingCustomer from "./ExistingCustomer"
 import Certificate from "./Certificate"
 import Header from "./Header"
-
+import Footer from "./Footer"
 
 const PageRoutes = () => {
     return (
         <Routes>
-          <Route exact path="/" element={<><Home /></>} />
+          <Route exact path="/" element={<><Header/><Home /><Footer/></>}/>
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/certificate" element={<><Header title="Tax Preparation"/><Certificate /></>} />
-          <Route exact path="/newCustomer" element={<><Header title="New Customer"/><NewCustomer /></>} />
-          <Route exact path="/existingCustomer" element={<><Header title="Existing Customer"/><ExistingCustomer /></>} />
+          <Route exact path="/certificate" element={<><Header title="Tax Preparation"/><Certificate /><Footer/></>} />
+          <Route exact path="/newCustomer" element={<><Header title="New Customer"/><NewCustomer /><Footer/></>} />
+          <Route exact path="/existingCustomer" element={<><Header title="Existing Customer"/><ExistingCustomer /><Footer/></>} />
           <Route path='*' element={<NotFound />}/>
         </Routes>
     )

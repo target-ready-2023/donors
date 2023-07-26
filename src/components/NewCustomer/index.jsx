@@ -17,14 +17,14 @@ const options = [
     value: 3,
   },
   {
-    label:"CREDIT",
+    label: "CREDIT",
     value: 4,
-  },{
-    label:"NEFT",
-    value :5
-  }
+  },
+  {
+    label: "NEFT",
+    value: 5,
+  },
 ];
-
 
 const NewCustomer = () => {
   const [Name, setName] = useState("");
@@ -60,10 +60,10 @@ const NewCustomer = () => {
       title: `Hello !!`,
       text: "You have successfully added !",
       icon: "success",
-      buttons:{
-        Ok: {text: "Great !"}
-      }
-    })
+      buttons: {
+        Ok: { text: "Great !" },
+      },
+    });
   }
 
   return (
@@ -79,17 +79,16 @@ const NewCustomer = () => {
             justifyContent: "center",
             textAlign: "center",
             borderRadius: "10px",
-            border: "3px solid white",
+            border: "3px solid",
           }}
         >
-          <h2 style={{ color: "white" }}>
+          <h2>
             <center>New Customer</center>
           </h2>
-          <hr style={{ width: "100%", borderTop: "3px solid white" }}></hr>
+          <hr style={{ width: "100%", borderTop: "3px solid " }}></hr>
           <form
             onSubmit={handleSubmit}
             action={<Link to="/existingCustomer" />}
-            style={{ color: "white" }}
           >
             <Stack
               spacing={8}
@@ -104,10 +103,6 @@ const NewCustomer = () => {
                 value={Name}
                 fullWidth
                 required
-                sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
-                }}
                 InputProps={{disableUnderline: true}}
               />
               <TextField
@@ -118,10 +113,6 @@ const NewCustomer = () => {
                 value={Address}
                 fullWidth
                 required
-                sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
-                }}
                 InputProps={{disableUnderline: true}}
               />
             </Stack>
@@ -135,8 +126,7 @@ const NewCustomer = () => {
                 fullWidth
                 required
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -149,8 +139,7 @@ const NewCustomer = () => {
                 fullWidth
                 required
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
                 InputProps={{disableUnderline: true}}
               />
@@ -159,31 +148,29 @@ const NewCustomer = () => {
               <TextField
                 type="text"
                 variant="filled"
-      
                 label="PAN"
                 onChange={(e) => setPAN(e.target.value)}
                 value={PAN}
                 fullWidth
                 required
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
+                InputProps={{disableUnderline: true}}
               />
 
               <TextField
                 type="number"
                 variant="filled"
-            
                 label="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={Amount}
                 fullWidth
                 required
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '3px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
+                InputProps={{disableUnderline: true}}
               />
             </Stack>
             <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
@@ -193,11 +180,10 @@ const NewCustomer = () => {
                 label="Transaction mode"
                 fullWidth
                 variant="filled"
-             
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
+                InputProps={{disableUnderline: true}}
               >
                 {options.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -207,18 +193,16 @@ const NewCustomer = () => {
               </TextField>
               <TextField
                 type="date"
-              
                 variant="filled"
                 label="Date"
                 onChange={(e) => setDate(e.target.value)}
                 value={Date}
                 fullWidth
                 required
-                
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:4
+                  mb: 4,
                 }}
+                InputProps={{disableUnderline: true}}
               />
             </Stack>
             <Button
@@ -227,7 +211,7 @@ const NewCustomer = () => {
                 color: "white",
                 marginLeft: "4%",
                 marginBottom: "5%",
-                backgroundColor: "blue",
+                backgroundColor: "#1167b1",
                 paddingLeft: "30px",
                 paddingRight: "30px",
               }}
