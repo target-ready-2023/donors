@@ -24,6 +24,7 @@ export default function Footer() {
             <Typography variant="h6" color="text.primary" gutterBottom>
               About Us
             </Typography>
+          <hr/>
             <Typography variant="body2" color="text.secondary">
               Dream School Foundation was established in Bangalore, India in
               2005 by a group of passionate volunteers. Through our work, we
@@ -36,20 +37,22 @@ export default function Footer() {
             <Typography variant="h6" color="text.primary" gutterBottom>
               Contact Us
             </Typography>
+            <hr/>
             <Typography variant="body2" color="text.secondary">
             123, Hennur Road, Banglore
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Email: info@example.com
+              Email: info@dsfindia.org
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Phone: +91-1234567890
+            Phone: +91 98440 60478
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Follow Us
             </Typography>
+            <hr/>
             <Link href="https://www.facebook.com/" color="inherit">
               <Facebook />
             </Link>

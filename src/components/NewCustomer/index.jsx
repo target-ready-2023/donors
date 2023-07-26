@@ -73,19 +73,19 @@ const NewCustomer = () => {
           style={{
             margin: "0 auto",
             display: "flex",
-            width: "800px",
+            width: "650px",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            borderRadius: "10px",
-            border: "3px solid",
+            borderRadius: "5px",
+            border: "3px solid grey",
           }}
         >
-          <h2>
+          <h2 style={{color:"grey"}}>
             <center>New Customer</center>
           </h2>
-          <hr style={{ width: "100%", borderTop: "3px solid " }}></hr>
+          <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <form
             onSubmit={handleSubmit}
             action={<Link to="/existingCustomer" />}
@@ -144,6 +144,7 @@ const NewCustomer = () => {
                 InputProps={{disableUnderline: true}}
               />
             </Stack>
+            
             <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="text"
