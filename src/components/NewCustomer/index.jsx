@@ -68,7 +68,16 @@ const NewCustomer = () => {
 
   return (
     <React.Fragment>
-      <div style={{ padding: "90px " }}>
+      <div style={{padding:"50px"}}>
+        <p style={{color:"grey",fontWeight:"bold",fontSize:"20px",marginLeft:"70px",marginRight:"70px"}}>
+          DSF is a development organization working towards the goal of
+          quality and equity in education and making a happy childhood a reality
+          for the children. 
+          The support from civil society that believes in the
+          premise that, education is the most sustainable instrument in nation
+          building and creating livelihoods, is crucial to make this mission a
+          possibility. </p>
+        <hr style={{ margin: "50px" }} />
         <div
           style={{
             margin: "0 auto",
@@ -78,7 +87,7 @@ const NewCustomer = () => {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            borderRadius: "5px",
+
             border: "3px solid grey",
           }}
         >
@@ -143,9 +152,9 @@ const NewCustomer = () => {
                 }}
                 InputProps={{ disableUnderline: true }}
                 InputLabelProps={{
-                  shrink: true, disableUnderline: true 
+                  shrink: true,
+                  disableUnderline: true,
                 }}
-              
               />
             </Stack>
 
@@ -199,7 +208,7 @@ const NewCustomer = () => {
               <TextField
                 type="date"
                 variant="filled"
-                label="Date"
+                label="Transaction Date"
                 onChange={(e) => setDate(e.target.value)}
                 value={Date}
                 fullWidth
@@ -229,6 +238,8 @@ const NewCustomer = () => {
             </Button>
           </form>
         </div>
+        <hr style={{ margin: "50px" }} />
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING CUSTOMER</Link></p>
       </div>
     </React.Fragment>
   );
