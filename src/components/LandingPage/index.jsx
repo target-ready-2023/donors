@@ -1,5 +1,4 @@
 import React from 'react'
-import Home from '../Home'
 import Homef from '../Homef'
 
 export default function LandingPage() {
