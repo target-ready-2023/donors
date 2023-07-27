@@ -82,7 +82,7 @@ const NewCustomer = () => {
             border: "3px solid grey",
           }}
         >
-          <h2 style={{color:"grey"}}>
+          <h2 style={{ color: "grey" }}>
             <center>New Customer</center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
@@ -103,7 +103,7 @@ const NewCustomer = () => {
                 value={Name}
                 fullWidth
                 required
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               />
               <TextField
                 type="text"
@@ -113,7 +113,7 @@ const NewCustomer = () => {
                 value={Address}
                 fullWidth
                 required
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               />
             </Stack>
             <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
@@ -128,7 +128,7 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               />
               <TextField
                 type="date"
@@ -141,10 +141,14 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
+                InputLabelProps={{
+                  shrink: true, disableUnderline: true 
+                }}
+              
               />
             </Stack>
-            
+
             <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="text"
@@ -157,7 +161,7 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               />
 
               <TextField
@@ -171,7 +175,7 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               />
             </Stack>
             <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
@@ -184,7 +188,7 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
               >
                 {options.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -203,7 +207,10 @@ const NewCustomer = () => {
                 sx={{
                   mb: 4,
                 }}
-                InputProps={{disableUnderline: true}}
+                InputProps={{ disableUnderline: true }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
               />
             </Stack>
             <Button

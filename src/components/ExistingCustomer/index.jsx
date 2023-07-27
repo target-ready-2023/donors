@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
-import { TextField, Stack, Button, MenuItem, Grid, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TextField,  Button, MenuItem, Grid, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 const options = [
   {
     label: "UPI",
     value: 1,
   },
   {
-    label: "DEBIT CARD",
+    label: "IMPS",
     value: 2,
   },
   {
-    label: "NET BANKING",
+    label: "DEBIT",
     value: 3,
+  },
+  {
+    label: "CREDIT",
+    value: 4,
+  },
+  {
+    label: "NEFT",
+    value: 5,
   },
 ];
 
@@ -64,13 +72,13 @@ const ExistingCostumerPage = () => {
           justifyContent: "center",
           textAlign: "center",
           borderRadius: "6px",
-          border: "3px solid white",
+          border: "3px solid grey",
         }}
       >
-        <h2 style={{ color: "white" }}>
+        <h2 style={{ color: "grey" }}>
           <center>Existing Customer</center>
         </h2>
-        <hr style={{ width: "100%", borderTop: "2px solid white" }}></hr>
+        <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
         <form
             onSubmit={handleSubmit}
             style={{ color: "white" }}
@@ -82,11 +90,11 @@ const ExistingCostumerPage = () => {
           <Table sx={{tableLayout: "auto"}}>
             <TableHead>
               <TableRow sx={{
-        backgroundColor: "white",
-        borderBottom: "2px white",
+        // backgroundColor: "white",
+        borderBottom: "2px ",
         "& th": {
-          fontSize: "1.10rem",
-          color: "black"
+          fontSize: "1.10rem"
+        
         }
       }}>
                 <TableCell>Donor ID</TableCell>
@@ -109,10 +117,7 @@ const ExistingCostumerPage = () => {
                    label="Donar-Id"
                     value={donorId}
                     onChange={(e) => setDonorId(e.target.value)}
-                    sx={{
-                        "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                        "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
-                      }}
+                    
                       InputProps={{disableUnderline: true}}
                   />
                 </TableCell>
@@ -128,10 +133,7 @@ const ExistingCostumerPage = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    sx={{
-                        "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                        "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1}
-                      }}
+                   
                       InputProps={{disableUnderline: true}}
                   />
                 </TableCell>
@@ -151,7 +153,7 @@ const ExistingCostumerPage = () => {
                 marginLeft: "1%",
                 marginTop:"1%",
                 marginBottom: "1%",
-                backgroundColor: "blue",
+                backgroundColor: "#1167b1",
                 paddingLeft: "30px",
                 paddingRight: "30px",
               }}
@@ -174,9 +176,9 @@ const ExistingCostumerPage = () => {
                 required
                 sx={{
                   width: {sm: 750, md: 600},
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:2
+                 mb:1
                 }}
+                InputProps={{disableUnderline: true}}
               />
       </Grid>
       <Grid item xs={12}>
@@ -189,9 +191,9 @@ const ExistingCostumerPage = () => {
                 value={transactionMode}
                 sx={{
                   width: {sm: 750, md: 600},
-                  "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-                  "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:2
+                 mb:1
                 }}
+                InputProps={{disableUnderline: true}}
               >
                 {options.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -211,12 +213,11 @@ const ExistingCostumerPage = () => {
           fullWidth
           sx={{
             width: {sm: 750, md: 600},
-            "& .MuiInputLabel-root": {color: 'white', borderRadius: 1,},
-            "& .MuiFilledInput-input": {border: '2px solid white', borderRadius: 1},mb:1
+           mb:1
           }}
+          InputProps={{ disableUnderline: true }}
           InputLabelProps={{
-            shrink: true,
-            
+            shrink: true, 
           }}
         />
       </Grid>
@@ -227,7 +228,7 @@ const ExistingCostumerPage = () => {
                 color: "white",
                 marginLeft: "2%",
                 marginBottom: "2%",
-                backgroundColor: "blue",
+                backgroundColor: "#1167b1",
                 paddingLeft: "30px",
                 paddingRight: "30px",
               }}
