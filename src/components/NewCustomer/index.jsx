@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextField, Button, Stack, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import axios from "axios";
+
+
+const addcustomerurl=`http://localhost:8080/api/v1/customer/addCustomer`;
 
 const options = [
   {
@@ -27,6 +31,7 @@ const options = [
 ];
 
 const NewCustomer = () => {
+  const [customer, setCustomer] = useState([]);
   const [Name, setName] = useState("");
   const [Address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -36,8 +41,25 @@ const NewCustomer = () => {
   const [Transaction, setTransaction] = useState(options[0]);
   const [Date, setDate] = useState("");
 
+ 
+
+  useEffect(() => {
+    axios.get(addcustomerurl).then((response) => {
+      setCustomer(response.data);
+    });
+  }, []);
+  function createCustomer() {
+    axios
+      .post(addcustomerurl, {
+        Name,Address,email,dateOfBirth,PAN,Amount,Transaction,Date
+      })
+      .then((response) => {
+        setCustomer(response.data);
+      });
+  }
   function handleSubmit(event) {
     event.preventDefault();
+    createCustomer();
     setName("");
     setAddress("");
     setEmail("");
@@ -56,6 +78,7 @@ const NewCustomer = () => {
       Transaction,
       Date
     );
+    
     swal({
       title: `Hello !!`,
       text: "You have successfully added !",
@@ -233,7 +256,7 @@ const NewCustomer = () => {
                 paddingRight: "30px",
               }}
               type="submit"
-            >
+           onClick={handleSubmit} >
               Submit
             </Button>
           </form>
