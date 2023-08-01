@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/donor")
 public class DonorController {
@@ -34,15 +35,20 @@ public class DonorController {
 
 //    API for adding donor details to database
     @PostMapping("/addDonor")
-    public String addDonor(@RequestBody DonorProfile donor){
-        int i = 0;
-        List<DonorTransactions> transactions = donor.getTransactions();
-        for(DonorTransactions trans : transactions){
-            trans = transactionService.generateTransactionDetails(trans, i);
-            i++;
+    public ResponseEntity<String> addDonor(@RequestBody DonorProfile donor){
+        try {
+            int i = 0;
+            List<DonorTransactions> transactions = donor.getTransactions();
+            for (DonorTransactions trans : transactions) {
+                trans = transactionService.generateTransactionDetails(trans, i);
+                i++;
+            }
+            donorService.saveDonor(donor);
+            return new ResponseEntity<>("New Donor added!!", HttpStatus.CREATED);
         }
-        donorService.saveDonor(donor);
-        return "New Donor added!!";
+        catch (Exception e) {
+            return new ResponseEntity<>("Failed to add a new Donor", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 //    API for finding a donor details(donor_id, donor_name, donor_address, donor_pan) by checking with email in database
