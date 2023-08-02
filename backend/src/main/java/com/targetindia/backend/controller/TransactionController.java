@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/transaction")
 public class TransactionController {
