@@ -134,7 +134,7 @@ const NewCustomer = () => {
                 required={true}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
               <TextField
                 type="email"
                 variant="filled"
@@ -164,7 +164,7 @@ const NewCustomer = () => {
               />
             </Stack>
 
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
               <TextField
                 type="text"
                 variant="filled"
@@ -191,7 +191,7 @@ const NewCustomer = () => {
                 }}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
               <TextField
                 select
                 required={true}
