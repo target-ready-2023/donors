@@ -4,10 +4,10 @@ import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.TransactionRepository;
 import com.targetindia.backend.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -16,21 +16,20 @@ import java.util.List;
 @RequestMapping("/api/transaction")
 public class TransactionController {
     @Autowired
-    private final TransactionService transactionService;
+    private TransactionService transactionService;
 
     @Autowired
     private TransactionRepository transactionRepository;
 
-    public TransactionController(TransactionService transactionService) {
-        this.transactionService = transactionService;
-    }
-
-    private static final Logger logger = LoggerFactory.getLogger(TransactionController.class);
-
 //    API for getting all transactions from database
     @GetMapping("/getTransactions")
-    public List<DonorTransactions> getAllTransactions(){
-        return transactionRepository.findAll();
+    public ResponseEntity<List<DonorTransactions>> getAllTransactions(){
+        try{
+            List<DonorTransactions> transactions = transactionService.getAllTransactions();
+            return ResponseEntity.ok(transactions);
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
-
 }

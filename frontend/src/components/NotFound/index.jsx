@@ -1,4 +1,5 @@
 import { Card } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
     return (

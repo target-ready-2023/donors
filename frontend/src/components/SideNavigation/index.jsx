@@ -19,31 +19,17 @@ const SideNavigation = () => {
     navigate('/')
     handleClose()
   }
-  const handleTaxCertificate = () => {
-    navigate('/Certificate')
-    handleClose()
-  }
   
-  const handleNewCustomer = () => {
-    navigate('/NewCustomer')
-    handleClose()
-  }
-
-  const handleExistingCustomer = () => {
-    navigate('/ExistingCustomer')
-    handleClose()
-  }
-
   return (
     <>
       <Button
         id="side-navigation"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup={true}
-        aria-expanded={open ? true : undefined}
+        aria-expanded={open ? {true} : undefined}
         onClick={handleClick}
       >
-        <MenuIcon sx={{ color: 'white' }}/>
+        <MenuIcon />
       </Button>
       <Menu
         id="basic-menu"
@@ -55,9 +41,6 @@ const SideNavigation = () => {
         }}
       >
         <MenuItem onClick={handleHome}>Home</MenuItem>
-        <MenuItem onClick={handleNewCustomer}>New Customer</MenuItem>
-        <MenuItem onClick={handleExistingCustomer}>Existing Customer</MenuItem>
-        <MenuItem onClick={handleTaxCertificate}>Tax Certificate</MenuItem>
       </Menu>
     </>
   );

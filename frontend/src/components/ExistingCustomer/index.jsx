@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Axios from "axios";
 import swal from "sweetalert";
 import {
   TextField,
@@ -12,7 +13,7 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-import { addTransactionInfo, getDonorDetailsById } from "../../services/ApiService";
+// import DonorService from "../../services/DonorService";
 
 const options = [
   {
@@ -63,8 +64,9 @@ const ExistingCostumerPage = () => {
   const fetchDetails = (event) => {
     event.preventDefault();
     console.log("Donor Email : ", donorEmail);
-    getDonorDetailsById(donorEmail)
-    .then(response => {
+    Axios.get('http://localhost:8080/api/donor/findByEmail', {
+      params: {donorEmail}
+    }).then(response => {
       console.log("response : ", response.data);
       setName(response.data.donorName);
       setPan(response.data.donorPan);
@@ -86,7 +88,7 @@ const ExistingCostumerPage = () => {
       email : donorEmail
     };
     console.log(data)
-    addTransactionInfo(data)
+    Axios.put('http://localhost:8080/api/donor/addTransaction', data)
     .then(response => {
       console.log("Response : ", response);
       swal({

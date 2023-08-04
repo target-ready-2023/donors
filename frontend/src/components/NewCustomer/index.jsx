@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TextField, Button, Stack, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 import swal from "sweetalert";
-import { addDonorInfo} from "../../services/ApiService";
 
 const options = [
   {
@@ -61,7 +61,7 @@ const NewCustomer = () => {
       }]
     };
     console.log(data)
-    addDonorInfo(data)
+    Axios.post('http://localhost:8080/api/donor/addDonor', data)
     .then(response => {
       console.log("Response : ", response);
       swal({
@@ -134,7 +134,7 @@ const NewCustomer = () => {
                 required={true}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="email"
                 variant="filled"
@@ -164,7 +164,7 @@ const NewCustomer = () => {
               />
             </Stack>
 
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="text"
                 variant="filled"
@@ -191,7 +191,7 @@ const NewCustomer = () => {
                 }}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 select
                 required={true}

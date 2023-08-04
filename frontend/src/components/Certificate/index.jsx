@@ -12,7 +12,7 @@ import {
   TableBody,
 } from "@mui/material";
 import swal from "sweetalert";
-import { getCertificate, getDonorDetailsById } from "../../services/ApiService";
+import Axios from "axios";
 
 const EightyGCertificate = () => {
   const [fiscalYear, setFiscalYear] = useState("");
@@ -25,8 +25,9 @@ const EightyGCertificate = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("DonorEmail : ", donorEmail);
-    getDonorDetailsById(donorEmail)
-    .then(response => {
+    Axios.get('http://localhost:8080/api/donor/findByEmail', {
+      params: {donorEmail}
+    }).then(response => {
       setIsSubmitted(true);
       console.log("response : ", response.data);
       setName(response.data.donorName);
@@ -36,8 +37,9 @@ const EightyGCertificate = () => {
       console.log("Error : ", error);
     });
 
-    getCertificate(donorEmail, fiscalYear)
-    .then(response => {
+    Axios.get('http://localhost:8080/api/email/send', {
+      params: {donorEmail, fiscalYear}
+    }).then(response => {
       console.log("response : ", response.data);
       swal({
         title: `Hello !!`,

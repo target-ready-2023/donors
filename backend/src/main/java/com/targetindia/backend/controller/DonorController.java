@@ -63,14 +63,12 @@ public class DonorController {
             return ResponseEntity.notFound().build();
         }
     }
-
-//    API to add a transaction to the donor table, (from the existing customer page)
     @PutMapping("/addTransaction")
     public ResponseEntity<String> addTransactionToDonorProfile(@RequestBody TransactionDetailsDTO transactionDTO) {
         DonorTransactions transactionDetails = transactionDTO.getTransactionDetails();
         String email = transactionDTO.getEmail();
         try{
-            transactionDetails = transactionService.saveTransaction(transactionDetails, email);
+            transactionDetails = transactionService.generateTransactionDetails(transactionDetails, 0);
             donorService.addTransactionToDonorProfile(email, transactionDetails);
             return ResponseEntity.ok("Transaction added successfully.");
         } catch (IllegalArgumentException e) {
@@ -78,11 +76,5 @@ public class DonorController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add transaction.");
         }
-    }
-
-//    API for getting all the donors details from the database
-    @GetMapping("/getAllDonors")
-    public List<DonorProfile> getAllDonors(){
-        return donorRepository.findAll();
     }
 }
