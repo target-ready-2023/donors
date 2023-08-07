@@ -52,12 +52,17 @@ describe("New Donor", () => {
     await expect(addDonorInfo(donorData)).rejects.toEqual(errorResponse);
   });
   //Rendering NewDonor
-  test("renders the NewDonor component", () => {
-    render(NewCustomer);
-    const nameInput = screen.queryByLabelText("Name");
-    waitFor(() => expect(nameInput).toBeInTheDocument());
-  });
-
+  // test("renders the NewDonor component", () => {
+  //   render(NewCustomer);
+  //   const nameInput = screen.queryByLabelText("Name");
+  //   waitFor(() => expect(nameInput).toBeInTheDocument());
+  // });
+  
+test("NewDonor component renders correctly", () => {
+  const { asFragment } = render(NewCustomer);
+ waitFor(()=> expect(asFragment()).toMatchSnapshot());
+});
+//form submission triggers addDonorInfo 
   test("form submission triggers addDonorInfo and shows success message",  () => {
     render(NewCustomer);
 
