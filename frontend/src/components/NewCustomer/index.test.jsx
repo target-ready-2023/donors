@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { addDonorInfo } from '../../services/ApiService';
-
+import { render, screen, fireEvent } from "@testing-library/react";
+import NewCustomer from "./index";
+import { waitFor } from '@testing-library/react';
 jest.mock('axios');
 
-describe('addDonorInfo', () => {
+describe('New Donor', () => {
 
   const donorData = {donorName : "Akankshaaa",
     donorAddress : "Jaipur",
@@ -19,7 +21,7 @@ describe('addDonorInfo', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-
+//Testing of addDonorInfo 
   it('should add a new donor', async () => {
     const response = {status : 201 ,data:{ donorID : 1}};
     axios.post.mockResolvedValue(response);
@@ -32,11 +34,19 @@ describe('addDonorInfo', () => {
     expect(result.status).toEqual(response.status); // Compare only the "status" property of the response
  
   });
-
+//Error Handling
   it('should handle errors', async () => {
     const errorResponse = { response: { status: 500, data: { error: 'Server Error' } } };
     axios.post.mockRejectedValue(errorResponse);
 
     await expect(addDonorInfo(donorData)).rejects.toEqual(errorResponse);
   });
+//Rendering NewDonor
+  test("renders the NewDonor component", () => {
+    render(NewCustomer);
+    const nameInput = screen.queryByLabelText("Name");
+  waitFor(()=>expect(nameInput).toBeInTheDocument());
+  });
+
+  
 });
