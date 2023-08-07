@@ -1,7 +1,7 @@
 import { Toolbar, AppBar, Typography } from "@mui/material";
-import Logo from "../Logo";
+import Logo from "../Logo/index";
 import {Link} from "react-router-dom";
-import SideNavigation from "../SideNavigation";
+import SideNavigation from "../SideNavigation/index";
 
 const Header = (props) => {
   return (

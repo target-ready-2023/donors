@@ -32,7 +32,7 @@ const formatDateDDMMYYYY = (date) => {
   return `${day}-${month}-${year}`;
 };
 
-const NewCustomer = () => {
+const NewDonor = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -52,7 +52,7 @@ const NewCustomer = () => {
       donorName : name,
       donorAddress : address,
       donorEmail: email,
-      dateOfBirth : dateOfBirth,
+      dateOfBirth : formatDateDDMMYYYY(dateOfBirth),
       donorPan : pan,
       transactions : [{
         amount : amount,
@@ -104,7 +104,7 @@ const NewCustomer = () => {
           }}
         >
           <h2 style={{ color: "grey" }}>
-            <center>New Customer</center>
+            <center>New Donor</center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <form
@@ -134,7 +134,7 @@ const NewCustomer = () => {
                 required={true}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="email"
                 variant="filled"
@@ -164,7 +164,7 @@ const NewCustomer = () => {
               />
             </Stack>
 
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 type="text"
                 variant="filled"
@@ -191,7 +191,7 @@ const NewCustomer = () => {
                 }}
               />
             </Stack>
-            <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
+            <Stack spacing={8} direction="row" sx={{ marginBottom: 0 }}>
               <TextField
                 select
                 required={true}
@@ -243,10 +243,10 @@ const NewCustomer = () => {
           </form>
         </div>
         <hr style={{ margin: "50px" }} />
-        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING CUSTOMER</Link></p>
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingDonor">EXISTING DONOR</Link></p>
       </div>
     </React.Fragment>
   );
 };
 
-export default NewCustomer;
+export default NewDonor;

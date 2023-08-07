@@ -4,7 +4,6 @@ import com.targetindia.backend.dto.DonorDetailsDTO;
 import com.targetindia.backend.entity.DonorProfile;
 import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.DonorRepository;
-import com.targetindia.backend.repository.TransactionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +15,6 @@ import java.util.List;
 public class DonorServiceImpl implements DonorService{
     @Autowired
     private DonorRepository donorRepository;
-
-//    @Autowired
-//    private TransactionService transactionService;
 
 //    Method to save the Donor Details
     @Override
@@ -44,11 +40,6 @@ public class DonorServiceImpl implements DonorService{
         return donorRepository.findDonorDetailsByEmail(donorEmail);
     }
 
-//    Method to get all the donors and their details
-    public List<DonorProfile> findAllDonor() {
-        return donorRepository.findAll();
-    }
-
 //    Method to get the donorDetails by searching with email
     @Override
     public DonorProfile findDonorDetailsByEmail(String donorEmail) {
@@ -62,7 +53,6 @@ public class DonorServiceImpl implements DonorService{
         DonorProfile donorProfile = findDonorDetailsByEmail(email);
         donorProfile.getTransactions().add(transaction);
         return donorRepository.save(donorProfile);
-
     }
 
 }

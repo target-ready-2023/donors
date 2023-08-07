@@ -42,7 +42,7 @@ const formatDateDDMMYYYY = (date) => {
   return `${day}-${month}-${year}`;
 };
 
-const ExistingCostumerPage = () => {
+const ExistingDonor = () => {
   const [donorEmail, setDonorEmail] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -130,7 +130,7 @@ const ExistingCostumerPage = () => {
           }}
         >
           <h2 style={{ color: "grey" }}>
-            <center>Existing Customer</center>
+            <center>Existing Donor</center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <Grid container spacing={1}>
@@ -280,4 +280,4 @@ const ExistingCostumerPage = () => {
   );
 };
 
-export default ExistingCostumerPage;
+export default ExistingDonor;
