@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import swal from "sweetalert";
 import {
   TextField,
@@ -37,10 +37,7 @@ const options = [
   },
 ];
 
-const formatDateDDMMYYYY = (date) => {
-  const [year, month, day] = date.split('-');
-  return `${day}-${month}-${year}`;
-};
+
 
 const ExistingCostumerPage = () => {
   const [donorEmail, setDonorEmail] = useState("");
@@ -49,7 +46,7 @@ const ExistingCostumerPage = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
 
   const handleTransactionModeChange = (e) => {
     setTransactionMode(e.target.value); // Update the state with the selected label
@@ -58,6 +55,23 @@ const ExistingCostumerPage = () => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(donorEmail);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
   };
 
   const fetchDetails = (event) => {
@@ -81,7 +95,7 @@ const ExistingCostumerPage = () => {
       transactionDetails :{
         amount : amount,
         transactionMode : transactionMode,
-        transactionDate : formatDateDDMMYYYY(date)
+        transactionDate : formatDate(date)
       },
       email : donorEmail
     };
@@ -240,11 +254,11 @@ const ExistingCostumerPage = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                type="date"
+                // type="date"
                 required={true}
                 variant="filled"
                 label="Date"
-                value={date}
+                value={date.toLocaleDateString('en-GB')}
                 onChange={(e) => setDate(e.target.value)}
                 fullWidth
                 sx={{
