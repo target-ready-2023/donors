@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { TextField, Button, Stack, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
@@ -27,10 +27,8 @@ const options = [
   },
 ];
 
-const formatDateDDMMYYYY = (date) => {
-  const [year, month, day] = date.split('-');
-  return `${day}-${month}-${year}`;
-};
+
+
 
 const NewCustomer = () => {
   const [name, setName] = useState("");
@@ -40,11 +38,38 @@ const NewCustomer = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
+  
 
   const handleTransactionModeChange = (e) => {
     setTransactionMode(e.target.value); // Update the state with the selected label
   };
+ const formatSelectedDateOfBirth = (date) => {
+  const selectedDate = new Date(date);
+  const day = selectedDate.getDate().toString().padStart(2, '0');
+  const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+  const year = selectedDate.getFullYear();
+  return `${day}-${month}-${year}`;
+};
+
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+ 
 
   const addDonorDetails = (e) => {
       e.preventDefault();
@@ -52,14 +77,15 @@ const NewCustomer = () => {
       donorName : name,
       donorAddress : address,
       donorEmail: email,
-      dateOfBirth : dateOfBirth,
+      dateOfBirth : formatSelectedDateOfBirth(dateOfBirth),
       donorPan : pan,
       transactions : [{
         amount : amount,
         transactionMode : transactionMode,
-        transactionDate : formatDateDDMMYYYY(date)
+        transactionDate : formatDate(date)
       }]
     };
+    
     console.log(data)
     addDonorInfo(data)
     .then(response => {
@@ -104,7 +130,7 @@ const NewCustomer = () => {
           }}
         >
           <h2 style={{ color: "grey" }}>
-            <center>New Customer</center>
+            <center>New Donor</center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <form
@@ -211,11 +237,11 @@ const NewCustomer = () => {
                 ))}
               </TextField>
               <TextField
-                type="date"
+                // type="date"
                 variant="filled"
                 label="Transaction Date"
                 onChange={(e) => setDate(e.target.value)}
-                value={date}
+                value={date.toLocaleDateString('en-GB')}
                 fullWidth
                 required={true}
                 sx={{
@@ -243,7 +269,7 @@ const NewCustomer = () => {
           </form>
         </div>
         <hr style={{ margin: "50px" }} />
-        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING CUSTOMER</Link></p>
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING DONOR</Link></p>
       </div>
     </React.Fragment>
   );

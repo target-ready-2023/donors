@@ -24,12 +24,12 @@ const SideNavigation = () => {
     handleClose()
   }
   
-  const handleNewCustomer = () => {
+  const handleNewDonor = () => {
     navigate('/NewCustomer')
     handleClose()
   }
 
-  const handleExistingCustomer = () => {
+  const handleExistingDonor = () => {
     navigate('/ExistingCustomer')
     handleClose()
   }
@@ -55,8 +55,8 @@ const SideNavigation = () => {
         }}
       >
         <MenuItem onClick={handleHome}>Home</MenuItem>
-        <MenuItem onClick={handleNewCustomer}>New Customer</MenuItem>
-        <MenuItem onClick={handleExistingCustomer}>Existing Customer</MenuItem>
+        <MenuItem onClick={handleNewDonor}>New Donor</MenuItem>
+        <MenuItem onClick={handleExistingDonor}>Existing Donor</MenuItem>
         <MenuItem onClick={handleTaxCertificate}>Tax Certificate</MenuItem>
       </Menu>
     </>
