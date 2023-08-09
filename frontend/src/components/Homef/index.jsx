@@ -45,7 +45,7 @@ function Homef() {
                     width: "200px",
                   }}
                 >
-                  New Customer
+                  New Donor
                 </Button>
               </Link>
             </CardActions>
@@ -80,7 +80,7 @@ function Homef() {
                     marginLeft:"60px"
                   }}
                 >
-                  Existing Customer
+                  Existing Donor
                 </Button>
               </Link>
             </CardActions>

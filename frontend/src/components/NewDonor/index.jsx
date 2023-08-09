@@ -130,7 +130,7 @@ const NewCustomer = () => {
           }}
         >
           <h2 style={{ color: "grey" }}>
-            <center>New Customer</center>
+            <center>New Donor</center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <form
@@ -269,7 +269,7 @@ const NewCustomer = () => {
           </form>
         </div>
         <hr style={{ margin: "50px" }} />
-        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING CUSTOMER</Link></p>
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING DONOR</Link></p>
       </div>
     </React.Fragment>
   );
