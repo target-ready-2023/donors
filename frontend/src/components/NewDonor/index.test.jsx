@@ -1,7 +1,7 @@
 import axios from "axios";
 import { addDonorInfo } from "../../services/ApiService";
 import { render, screen, fireEvent } from "@testing-library/react";
-import NewCustomer from "./index";
+import NewDonor from "./index";
 import { waitFor } from "@testing-library/react";
 
 jest.mock("axios");
@@ -52,19 +52,19 @@ describe("New Donor", () => {
     await expect(addDonorInfo(donorData)).rejects.toEqual(errorResponse);
   });
   //Rendering NewDonor
-  // test("renders the NewDonor component", () => {
-  //   render(NewCustomer);
-  //   const nameInput = screen.queryByLabelText("Name");
-  //   waitFor(() => expect(nameInput).toBeInTheDocument());
-  // });
+  test("renders the NewDonor component", () => {
+    render(NewDonor);
+    const nameInput = screen.queryByLabelText("Name");
+    waitFor(() => expect(nameInput).toBeInTheDocument());
+  });
   
 test("NewDonor component renders correctly", () => {
-  const { asFragment } = render(NewCustomer);
+  const { asFragment } = render(NewDonor);
  waitFor(()=> expect(asFragment()).toMatchSnapshot());
 });
 //form submission triggers addDonorInfo 
   test("form submission triggers addDonorInfo and shows success message",  () => {
-    render(NewCustomer);
+    render(NewDonor);
 
     // Fill out the form fields
    waitFor(()=> fireEvent.change(screen.queryByLabelText("Name"), { target: { value: "John Doe" } }));
