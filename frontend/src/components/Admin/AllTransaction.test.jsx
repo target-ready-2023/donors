@@ -45,5 +45,4 @@ describe("AllTransaction component", () => {
     });
   });
 
-  // ... add more test cases as needed
 });
