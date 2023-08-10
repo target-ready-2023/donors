@@ -35,6 +35,8 @@ public class DonorProfile {
     @Column(name="donor_date_of_birth")
     private Date dateOfBirth;
 
+    @Column(name="donor_amount", nullable = false)
+    private Long donorAmount;
 
     @Column(name="donor_email", unique = true, nullable = false)
     @NotBlank(message = "Email is mandatory")
