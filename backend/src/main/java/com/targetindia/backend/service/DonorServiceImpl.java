@@ -4,7 +4,6 @@ import com.targetindia.backend.dto.DonorDetailsDTO;
 import com.targetindia.backend.entity.DonorProfile;
 import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.DonorRepository;
-import com.targetindia.backend.repository.TransactionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +16,10 @@ public class DonorServiceImpl implements DonorService{
     @Autowired
     private DonorRepository donorRepository;
 
-//    @Autowired
-//    private TransactionService transactionService;
-
 //    Method to save the Donor Details
     @Override
     public DonorProfile saveDonor(DonorProfile donor) {
         donor.setDonorID(generateDonorId());
-//        List<DonorTransactions> transactions = donor.getTransactions();
-//        for(DonorTransactions trans : transactions){
-//            trans = transactionService.generateTransactionDetails(trans);
-//        }
         return donorRepository.save(donor);
     }
 
@@ -44,25 +36,19 @@ public class DonorServiceImpl implements DonorService{
         return donorRepository.findDonorDetailsByEmail(donorEmail);
     }
 
-//    Method to get all the donors and their details
-    public List<DonorProfile> findAllDonor() {
-        return donorRepository.findAll();
-    }
-
 //    Method to get the donorDetails by searching with email
     @Override
     public DonorProfile findDonorDetailsByEmail(String donorEmail) {
-        DonorProfile donor = donorRepository.findDonorByEmail(donorEmail);
-        return donor;
+        return donorRepository.findDonorByEmail(donorEmail);
     }
 
     @Override
     @Transactional
     public DonorProfile addTransactionToDonorProfile(String email, DonorTransactions transaction) {
         DonorProfile donorProfile = findDonorDetailsByEmail(email);
+        donorProfile.setDonorAmount(donorProfile.getDonorAmount() + transaction.getAmount());
         donorProfile.getTransactions().add(transaction);
         return donorRepository.save(donorProfile);
-
     }
 
 }

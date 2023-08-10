@@ -40,4 +40,8 @@ public class DonorTransactions {
 
     @Column(name = "fiscal_year")
     private String fiscalYear;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "donor_id", referencedColumnName = "donor_id", insertable = false, updatable = false)
+    private DonorProfile donorProfile;
 }
