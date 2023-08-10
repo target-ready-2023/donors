@@ -39,13 +39,15 @@ const AllDonar = () => {
     <>
     <TableBody>
                     <TableRow>
-                      <TableCell>{donar.donorName}</TableCell>
-                      <TableCell>{donar.donorEmail}</TableCell>
-                      <TableCell>{donar.donorAddress}</TableCell>
-                      <TableCell>{donar.donorPan}</TableCell>
+                    <TableCell>{donar.donorName}</TableCell>
+                      {/* <TableCell>{donar.donorEmail}</TableCell> */}
+                      <TableCell>{donar.transactionId}</TableCell>
+                      <TableCell>{donar.invoiceId}</TableCell>
+                     
                       {/* <TableCell>{transactionDate}</TableCell> */}
-                      <TableCell>{donar.dateOfBirth}</TableCell>
-                      {/* <TableCell>{amount}</TableCell> */}
+                      <TableCell>{donar.transactionDate}</TableCell>
+                      <TableCell>{donar.transactionMode}</TableCell>
+                      <TableCell>{donar.amount}</TableCell>
                     </TableRow>
                   </TableBody>
   </>
@@ -140,7 +142,7 @@ const AllDonar = () => {
                     >
                       {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
                   
-                      
+                      <TableCell>Name</TableCell>
                       <TableCell>Transaction Id</TableCell>
                       <TableCell>Invoice ID</TableCell>
                       <TableCell>Transaction Date</TableCell>

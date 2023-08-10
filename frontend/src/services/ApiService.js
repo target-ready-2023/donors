@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const DONOR_API_BASE_URL = "http://localhost:8080/api/donor";
 const EMAIL_API_BASE_URL = "http://localhost:8080/api/email";
-const ALL_DONOR_DETAIL_URL="http://localhost:8080/api/donor";
+const ALL_DONOR_DETAIL_URL="http://localhost:8080/api/admin";
 const ALL_TRANSACTION_URL="http://localhost:8080/api/admin";
 const ALL_TRANSACTION_OF_SINGLE_DONOR="http://localhost:8080/api/admin"
 export const addDonorInfo = (data) => {
@@ -34,12 +34,12 @@ export const getallDonarDetail=()=>{
 }
 
 export const getAllTransactionOfParticularDonor=(donorEmail)=>{
-    return axios.get(`${ALL_TRANSACTION_OF_SINGLE_DONOR}`,{
+    return axios.get(`${ALL_TRANSACTION_OF_SINGLE_DONOR}/getTransactionsWithEmail`,{
         params:{
             donorEmail
         }
     })
 }
 export const getAllTransaction=()=>{
-    return axios.get(`${ALL_TRANSACTION_URL}`)
+    return axios.get(`${ALL_TRANSACTION_URL}/getAllTransactions`)
 }

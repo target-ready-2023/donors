@@ -43,7 +43,8 @@ const AllDonar = () => {
                       <TableCell>{donar.donorPan}</TableCell>
                       {/* <TableCell>{transactionDate}</TableCell> */}
                       <TableCell>{donar.dateOfBirth}</TableCell>
-                      {/* <TableCell>{amount}</TableCell> */}
+                      <TableCell>{donar.donorAmount
+}</TableCell>
                     </TableRow>
                   </TableBody>
   </>
@@ -89,7 +90,7 @@ const AllDonar = () => {
                       <TableCell>Address</TableCell>
                       <TableCell>PAN</TableCell>
                       <TableCell>Date of Birth</TableCell>
-                      {/* <TableCell>Amount</TableCell> */}
+                      <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
                   

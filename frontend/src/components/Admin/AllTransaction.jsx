@@ -33,11 +33,12 @@ const AllTransaction = () => {
                     <TableRow>
                       <TableCell>{donar.donorName}</TableCell>
                       <TableCell>{donar.donorEmail}</TableCell>
-                      <TableCell>{donar.donorAddress}</TableCell>
-                      <TableCell>{donar.donorPan}</TableCell>
+                      <TableCell>{donar.invoiceId}</TableCell>
+                      <TableCell>{donar.transactionId}</TableCell>
                       {/* <TableCell>{transactionDate}</TableCell> */}
-                      <TableCell>{donar.dateOfBirth}</TableCell>
-                      {/* <TableCell>{amount}</TableCell> */}
+                      <TableCell>{donar.transactionDate}</TableCell>
+                      <TableCell>{donar.amount}</TableCell>
+                      <TableCell>{donar.fiscalYear}</TableCell>
                     </TableRow>
                   </TableBody>
   </>
@@ -77,12 +78,13 @@ const AllTransaction = () => {
                       }}
                     >
                       {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
-                   
-                      <TableCell>Invoice ID</TableCell>
-                      <TableCell>Transaction Id</TableCell>
                       <TableCell>Name</TableCell>
                       <TableCell>Email Id</TableCell>
+                      <TableCell>Invoice ID</TableCell>
+                      <TableCell>Transaction Id</TableCell>
+                      
                       <TableCell>Transaction Date</TableCell>
+                      <TableCell>Amount</TableCell>
                       <TableCell>Fiscal Year</TableCell>
                     </TableRow>
                   </TableHead>
