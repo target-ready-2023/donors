@@ -15,7 +15,7 @@ import {
 
 import {getallDonarDetail} from "../../services/ApiService"
 
-const AllDonar = () => {
+const AllDonars = () => {
   const [getAllDonarsDetail, setGetAllDonarsDetail] = useState([]);
   const fetchDetails = (event) => {
     event.preventDefault();
@@ -130,4 +130,4 @@ const AllDonar = () => {
   );
 };
 
-export default AllDonar;
+export default AllDonars;
