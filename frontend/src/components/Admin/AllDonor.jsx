@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 import {
-  TextField,
+  
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -32,12 +31,7 @@ const AllDonar = () => {
     
   }
 
-  // const [postAllDonars, setPostAllDonars] = useState([]);
-  // useEffect(() => {
-  //    axios.get(apiUrl).then((response) => {
-  //      setPostAllDonars(response.data);
-  //    })
-  //  }, [setPostAllDonars]);
+  
 
    const allDonars = getAllDonarsDetail.map((donar) => (
     <>

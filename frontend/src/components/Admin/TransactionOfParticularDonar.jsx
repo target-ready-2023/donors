@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import swal from "sweetalert";
+import React, { useState } from "react";
+
 import {
   TextField,
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -14,17 +12,44 @@ import {
   TableBody,
 } from "@mui/material";
 
-
+import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
 const AllDonar = () => {
+  const [donorEmail, setDonorEmail] = useState("");
   
-  const [InvoiceID, setInvoiceID] = useState("");
-  const [TransactionId, setTransactionId] = useState("");
-  const [transactionDate, setTransactionDate] = useState("");
-  const [amount, setAmount] = useState("");
-  const [TransactionMode, setTransactionMode] = useState("");
+  const isEmailValid = (donorEmail) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(donorEmail);
+  };
+  const [getAllTransaction,setGetAllTransaction] = useState([]);
+  const fetchDetails = (event) => {
+    event.preventDefault();
+    console.log("Donor Email : ", donorEmail);
+    getAllTransactionOfParticularDonor(donorEmail)
+    .then(response => {
+      setGetAllTransaction(response.data);
+      console.log("response : ", response.data);
+     
+    },[setGetAllTransaction])
+    
+  }
 
-  
+  const allTrans = getAllTransaction.map((donar) => (
+    <>
+    <TableBody>
+                    <TableRow>
+                      <TableCell>{donar.donorName}</TableCell>
+                      <TableCell>{donar.donorEmail}</TableCell>
+                      <TableCell>{donar.donorAddress}</TableCell>
+                      <TableCell>{donar.donorPan}</TableCell>
+                      {/* <TableCell>{transactionDate}</TableCell> */}
+                      <TableCell>{donar.dateOfBirth}</TableCell>
+                      {/* <TableCell>{amount}</TableCell> */}
+                    </TableRow>
+                  </TableBody>
+  </>
+  ));
   return (
     <React.Fragment>
       <div style={{ padding: "50px " }}>
@@ -66,14 +91,14 @@ const AllDonar = () => {
                           color="primary"
                           label="Email-Id"
                           required={true}
-                        //   value={donorEmail}
-                        //   onChange={(e) => setDonorEmail(e.target.value)}
-                        //   error={donorEmail !== "" && !isEmailValid(donorEmail)}
-                        //   helperText={
-                        //     donorEmail !== "" && !isEmailValid(donorEmail)
-                        //       ? "Invalid email format"
-                        //       : ""
-                        //   }
+                          value={donorEmail}
+                          onChange={(e) => setDonorEmail(e.target.value)}
+                          error={donorEmail !== "" && !isEmailValid(donorEmail)}
+                          helperText={
+                            donorEmail !== "" && !isEmailValid(donorEmail)
+                              ? "Invalid email format"
+                              : ""
+                          }
                         />
             </center>
             <center>
@@ -92,7 +117,7 @@ const AllDonar = () => {
                 }}
                 type="submit"
                 // disabled={isSubmitDisabled}
-                // onClick={fetchDetails}
+                onClick={fetchDetails}
               >
                 Fetch Details
               </Button>
@@ -123,16 +148,7 @@ const AllDonar = () => {
                       <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody>
-                    <TableRow>
-                    <TableCell>{TransactionId}</TableCell>
-                      <TableCell>{InvoiceID}</TableCell>
-                    
-                      <TableCell>{transactionDate}</TableCell>
-                      <TableCell>{TransactionMode}</TableCell>
-                      <TableCell>{amount}</TableCell>
-                    </TableRow>
-                  </TableBody>
+                  {allTrans}
                 </Table>
               </TableContainer>
             </Grid>
