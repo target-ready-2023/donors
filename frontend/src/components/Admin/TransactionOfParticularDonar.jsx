@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import swal from "sweetalert";
+import React, { useState } from "react";
+
 import {
   TextField,
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -14,17 +12,42 @@ import {
   TableBody,
 } from "@mui/material";
 
+import { getAllTransactionOfParticularDonor } from "../../services/ApiService";
 
+const ParticularDonar = () => {
+  const [donorEmail, setDonorEmail] = useState("");
+  const [getAllTransaction, setGetAllTransaction] = useState([]);
 
-const AllDonar = () => {
-  
-  const [InvoiceID, setInvoiceID] = useState("");
-  const [TransactionId, setTransactionId] = useState("");
-  const [transactionDate, setTransactionDate] = useState("");
-  const [amount, setAmount] = useState("");
-  const [TransactionMode, setTransactionMode] = useState("");
+  const isEmailValid = (donorEmail) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(donorEmail);
+  };
 
-  
+  const fetchDetails = (event) => {
+    event.preventDefault();
+    console.log("Donor Email : ", donorEmail);
+    getAllTransactionOfParticularDonor(donorEmail)
+      .then((response) => {
+        setGetAllTransaction(response.data);
+        console.log("response : ", response.data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  };
+
+  const allTrans = getAllTransaction.map((transaction) => (
+    <TableRow key={transaction.transactionId}>
+      <TableCell>{transaction.donorName}</TableCell>
+      <TableCell>{transaction.transactionId}</TableCell>
+      <TableCell>{transaction.invoiceId}</TableCell>
+      <TableCell>{transaction.transactionDate}</TableCell>
+      <TableCell>{transaction.transactionMode}</TableCell>
+      <TableCell>{transaction.amount}</TableCell>
+    </TableRow>
+  ));
+
   return (
     <React.Fragment>
       <div style={{ padding: "50px " }}>
@@ -47,37 +70,22 @@ const AllDonar = () => {
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <h2 style={{ color: "grey" }}>
             <center>
-            <TextField
-             style={{
-                // color: "white",
-                // marginLeft: "1%",
-                // marginTop: "1%",
-                // marginBottom: "10px",
-                // backgroundColor: "gray",
-                //  : '#1167b1',
-                // paddingLeft: "30px",
-                // paddingRight: "30px",
-              }}
-                          type="email"
-                          fullWidth
-                          placeholder="Your Email Id"
-                          margin="normal"
-                          variant="filled"
-                          color="primary"
-                          label="Email-Id"
-                          required={true}
-                        //   value={donorEmail}
-                        //   onChange={(e) => setDonorEmail(e.target.value)}
-                        //   error={donorEmail !== "" && !isEmailValid(donorEmail)}
-                        //   helperText={
-                        //     donorEmail !== "" && !isEmailValid(donorEmail)
-                        //       ? "Invalid email format"
-                        //       : ""
-                        //   }
-                        />
+              <TextField
+                // ... other props
+                label="Email-Id" // Make sure this label matches the one you're trying to find in the test
+                required={true}
+                value={donorEmail}
+                onChange={(e) => setDonorEmail(e.target.value)}
+                error={donorEmail !== "" && !isEmailValid(donorEmail)}
+                helperText={
+                  donorEmail !== "" && !isEmailValid(donorEmail)
+                    ? "Invalid email format"
+                    : ""
+                }
+              />
+              
             </center>
             <center>
-            {/* <Grid item xs={12}> */}
               <Button
                 variant="outlined"
                 style={{
@@ -86,17 +94,14 @@ const AllDonar = () => {
                   marginTop: "10%",
                   marginBottom: "10px",
                   backgroundColor: "gray",
-                  //  : '#1167b1',
                   paddingLeft: "30px",
                   paddingRight: "30px",
                 }}
                 type="submit"
-                // disabled={isSubmitDisabled}
-                // onClick={fetchDetails}
+                onClick={fetchDetails}
               >
                 Fetch Details
               </Button>
-            {/* </Grid> */}
             </center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
@@ -113,9 +118,7 @@ const AllDonar = () => {
                         },
                       }}
                     >
-                      {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
-                  
-                      
+                      <TableCell>Name</TableCell>
                       <TableCell>Transaction Id</TableCell>
                       <TableCell>Invoice ID</TableCell>
                       <TableCell>Transaction Date</TableCell>
@@ -123,20 +126,10 @@ const AllDonar = () => {
                       <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody>
-                    <TableRow>
-                    <TableCell>{TransactionId}</TableCell>
-                      <TableCell>{InvoiceID}</TableCell>
-                    
-                      <TableCell>{transactionDate}</TableCell>
-                      <TableCell>{TransactionMode}</TableCell>
-                      <TableCell>{amount}</TableCell>
-                    </TableRow>
-                  </TableBody>
+                  <TableBody>{allTrans}</TableBody>
                 </Table>
               </TableContainer>
             </Grid>
-            
           </Grid>
         </div>
       </div>
@@ -144,4 +137,4 @@ const AllDonar = () => {
   );
 };
 
-export default AllDonar;
+export default ParticularDonar;

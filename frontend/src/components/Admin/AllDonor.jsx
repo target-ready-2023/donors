@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 import {
-  TextField,
+  
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -15,7 +14,7 @@ import {
 
 import {getallDonarDetail} from "../../services/ApiService"
 
-const AllDonars = () => {
+const AllDonarPage = () => {
   const [getAllDonarsDetail, setGetAllDonarsDetail] = useState([]);
   const fetchDetails = (event) => {
     event.preventDefault();
@@ -32,12 +31,7 @@ const AllDonars = () => {
     
   }
 
-  // const [postAllDonars, setPostAllDonars] = useState([]);
-  // useEffect(() => {
-  //    axios.get(apiUrl).then((response) => {
-  //      setPostAllDonars(response.data);
-  //    })
-  //  }, [setPostAllDonars]);
+  
 
    const allDonars = getAllDonarsDetail.map((donar) => (
     <>
@@ -49,7 +43,8 @@ const AllDonars = () => {
                       <TableCell>{donar.donorPan}</TableCell>
                       {/* <TableCell>{transactionDate}</TableCell> */}
                       <TableCell>{donar.dateOfBirth}</TableCell>
-                      {/* <TableCell>{amount}</TableCell> */}
+                      <TableCell>{donar.donorAmount
+}</TableCell>
                     </TableRow>
                   </TableBody>
   </>
@@ -95,7 +90,7 @@ const AllDonars = () => {
                       <TableCell>Address</TableCell>
                       <TableCell>PAN</TableCell>
                       <TableCell>Date of Birth</TableCell>
-                      {/* <TableCell>Amount</TableCell> */}
+                      <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
                   
@@ -130,4 +125,4 @@ const AllDonars = () => {
   );
 };
 
-export default AllDonars;
+export default AllDonarPage;
