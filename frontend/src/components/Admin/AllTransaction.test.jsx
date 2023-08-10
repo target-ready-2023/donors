@@ -9,7 +9,6 @@ jest.mock("../../services/ApiService", () => ({
 
 describe("AllTransaction component", () => {
   test("renders all transaction details on fetch", async () => {
-    // Mock the data returned by ApiService for all transaction details
     const mockTransactionData = [
       {
         donorName: "Muskan",
@@ -20,18 +19,15 @@ describe("AllTransaction component", () => {
         amount: 10000,
         fiscalYear: "2023-2024",
       },
-    
+      // Add more mock data as needed
     ];
 
     getAllTransaction.mockResolvedValueOnce({ data: mockTransactionData });
 
-    // Render the component
     render(<AllTransaction />);
 
-    // Click the "Fetch Details" button
     fireEvent.click(screen.getByText("Fetch Details"));
 
-    // Wait for the transaction details to be fetched and displayed
     await waitFor(() => {
       mockTransactionData.forEach((transaction) => {
         expect(screen.getByText(transaction.donorName)).toBeInTheDocument();
@@ -45,4 +41,16 @@ describe("AllTransaction component", () => {
     });
   });
 
-});
+  test("displays a message when no transactions are available", () => {
+    getAllTransaction.mockResolvedValueOnce({ data: [] });
+
+    render(AllTransaction);
+
+    waitFor(()=> fireEvent.click(screen.getByText("Fetch Details")));
+
+     waitFor(() => expect(screen.getByText("No transactions available")).toBeInTheDocument());
+    });
+  });
+
+  
+
