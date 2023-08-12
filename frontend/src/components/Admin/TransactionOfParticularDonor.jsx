@@ -12,42 +12,46 @@ import {
   TableBody,
 } from "@mui/material";
 
-import { getAllTransactionOfParticularDonor } from "../../services/ApiService";
+import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
-const ParticularDonar = () => {
+export const Donor = () => {
   const [donorEmail, setDonorEmail] = useState("");
-  const [getAllTransaction, setGetAllTransaction] = useState([]);
-
+  
   const isEmailValid = (donorEmail) => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(donorEmail);
   };
-
+  const [getAllTransaction,setGetAllTransaction] = useState([]);
   const fetchDetails = (event) => {
     event.preventDefault();
     console.log("Donor Email : ", donorEmail);
     getAllTransactionOfParticularDonor(donorEmail)
-      .then((response) => {
-        setGetAllTransaction(response.data);
-        console.log("response : ", response.data);
-      })
-      .catch((error) => {
-        console.log("Error: ", error);
-      });
-  };
+    .then(response => {
+      setGetAllTransaction(response.data);
+      console.log("response : ", response.data);
+     
+    },[setGetAllTransaction])
+    
+  }
 
-  const allTrans = getAllTransaction.map((transaction) => (
-    <TableRow key={transaction.transactionId}>
-      <TableCell>{transaction.donorName}</TableCell>
-      <TableCell>{transaction.transactionId}</TableCell>
-      <TableCell>{transaction.invoiceId}</TableCell>
-      <TableCell>{transaction.transactionDate}</TableCell>
-      <TableCell>{transaction.transactionMode}</TableCell>
-      <TableCell>{transaction.amount}</TableCell>
-    </TableRow>
+  const allTrans = getAllTransaction.map((donar) => (
+    <>
+    <TableBody>
+                    <TableRow>
+                    <TableCell>{donar.donorName}</TableCell>
+                      {/* <TableCell>{donar.donorEmail}</TableCell> */}
+                      <TableCell>{donar.transactionId}</TableCell>
+                      <TableCell>{donar.invoiceId}</TableCell>
+                     
+                      {/* <TableCell>{transactionDate}</TableCell> */}
+                      <TableCell>{donar.transactionDate}</TableCell>
+                      <TableCell>{donar.transactionMode}</TableCell>
+                      <TableCell>{donar.amount}</TableCell>
+                    </TableRow>
+                  </TableBody>
+  </>
   ));
-
   return (
     <React.Fragment>
       <div style={{ padding: "50px " }}>
@@ -70,22 +74,38 @@ const ParticularDonar = () => {
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
           <h2 style={{ color: "grey" }}>
             <center>
-              <TextField
-                // ... other props
-                label="Email-Id" // Make sure this label matches the one you're trying to find in the test
-                required={true}
-                value={donorEmail}
-                onChange={(e) => setDonorEmail(e.target.value)}
-                error={donorEmail !== "" && !isEmailValid(donorEmail)}
-                helperText={
-                  donorEmail !== "" && !isEmailValid(donorEmail)
-                    ? "Invalid email format"
-                    : ""
-                }
-              />
-              
+            <TextField
+             style={{
+                // color: "white",
+                // marginLeft: "1%",
+                // marginTop: "1%",
+                // marginBottom: "10px",
+                // backgroundColor: "gray",
+                //  : '#1167b1',
+                // paddingLeft: "30px",
+                // paddingRight: "30px",
+              }}
+                          type="email"
+                          fullWidth
+                          placeholder="Your Email Id"
+                          margin="normal"
+                          variant="filled"
+                          color="primary"
+                          label="Email-Id"
+                          required={true}
+                          value={donorEmail}
+                          onChange={(e) => setDonorEmail(e.target.value)}
+                          error={donorEmail !== "" && !isEmailValid(donorEmail)}
+                          helperText={
+                            donorEmail !== "" && !isEmailValid(donorEmail)
+                              ? "Invalid email format"
+                              : ""
+                              
+                          }
+                        />
             </center>
             <center>
+            {/* <Grid item xs={12}> */}
               <Button
                 variant="outlined"
                 style={{
@@ -94,6 +114,7 @@ const ParticularDonar = () => {
                   marginTop: "10%",
                   marginBottom: "10px",
                   backgroundColor: "gray",
+                  //  : '#1167b1',
                   paddingLeft: "30px",
                   paddingRight: "30px",
                 }}
@@ -102,6 +123,7 @@ const ParticularDonar = () => {
               >
                 Fetch Details
               </Button>
+            {/* </Grid> */}
             </center>
           </h2>
           <hr style={{ width: "100%", borderTop: "2px solid grey" }}></hr>
@@ -118,6 +140,8 @@ const ParticularDonar = () => {
                         },
                       }}
                     >
+                      {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
+                  
                       <TableCell>Name</TableCell>
                       <TableCell>Transaction Id</TableCell>
                       <TableCell>Invoice ID</TableCell>
@@ -126,10 +150,11 @@ const ParticularDonar = () => {
                       <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody>{allTrans}</TableBody>
+                  {allTrans}
                 </Table>
               </TableContainer>
             </Grid>
+            
           </Grid>
         </div>
       </div>
@@ -137,4 +162,4 @@ const ParticularDonar = () => {
   );
 };
 
-export default ParticularDonar;
+

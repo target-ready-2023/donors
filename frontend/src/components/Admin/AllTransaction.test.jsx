@@ -19,7 +19,6 @@ describe("AllTransaction component", () => {
         amount: 10000,
         fiscalYear: "2023-2024",
       },
-      // Add more mock data as needed
     ];
 
     getAllTransaction.mockResolvedValueOnce({ data: mockTransactionData });
