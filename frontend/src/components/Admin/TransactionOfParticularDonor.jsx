@@ -14,7 +14,7 @@ import {
 
 import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
-export const Donor = () => {
+ export const SingleDonor = () => {
   const [donorEmail, setDonorEmail] = useState("");
   
   const isEmailValid = (donorEmail) => {
@@ -75,16 +75,7 @@ export const Donor = () => {
           <h2 style={{ color: "grey" }}>
             <center>
             <TextField
-             style={{
-                // color: "white",
-                // marginLeft: "1%",
-                // marginTop: "1%",
-                // marginBottom: "10px",
-                // backgroundColor: "gray",
-                //  : '#1167b1',
-                // paddingLeft: "30px",
-                // paddingRight: "30px",
-              }}
+
                           type="email"
                           fullWidth
                           placeholder="Your Email Id"
@@ -161,5 +152,4 @@ export const Donor = () => {
     </React.Fragment>
   );
 };
-
 
