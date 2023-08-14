@@ -44,7 +44,7 @@ public class TransactionServiceImplTest {
                 dateFormat.parse(transactionDate),
                 "TXN-12345678",
                 "FY2023-2024");
-        transactions.add(donorTransaction);
+
         donorProfile = new DonorProfile("DN-0001",
                 "Srilaxmi Jaina",
                 "Hyderabad, Telangana",
@@ -53,25 +53,16 @@ public class TransactionServiceImplTest {
                 "srilaxmijaina.01@gmail.com",
                 "1234567890",
                 transactions);
+        donorTransaction.setDonorProfile(donorProfile);
+        transactions.add(donorTransaction);
+        donorProfile.getTransactions().add(donorTransaction);
     }
 
     @AfterEach
     void tearDown() {
         donorTransaction = null;
         donorProfile = null;
-        donorRepository.deleteAll();
     }
-
-//    @Test
-//    void testSaveTransaction(){
-//        when(transactionService.generateTransactionId()).thenReturn(donorTransaction.getTransactionId());
-//        when(transactionService.generateInvoiceId(0)).thenReturn(donorTransaction.getInvoiceId());
-//        when(transactionService.generateFiscalYear(any(Date.class))).thenReturn(donorTransaction.getFiscalYear());
-//        DonorTransactions response = transactionService.saveTransaction(donorTransaction, donorProfile.getDonorEmail());
-//        assertEquals(donorTransaction.getInvoiceId(), response.getInvoiceId());
-//        assertEquals("FY2023-2024", response.getFiscalYear());
-//        assertNotNull(response);
-//    }
 
     @Test
     void testGenerateTransactionDetails(){
@@ -81,15 +72,49 @@ public class TransactionServiceImplTest {
         assertEquals(donorTransaction.getFiscalYear(), response.getFiscalYear());
         assertNotNull(response);
     }
-//
-//    @Test
-//    void testGetAllTransactions(){
-//        List<DonorTransactionsDTO> transactions = new ArrayList<>();
-//        transactions.add(donorTransaction);
-//        when(transactionRepository.findAll()).thenReturn(transactions);
-//        List<DonorTransactionsDTO> response = transactionService.getAllTransactions();
-//        assertEquals(transactions, response);
-//    }
+
+    @Test
+    void testGetAllTransactionsWithDonorInfo(){
+        List<DonorTransactions> transactions = new ArrayList<>();
+        transactions.add(donorTransaction);
+        when(transactionRepository.findAll()).thenReturn(transactions);
+        List<DonorTransactionsDTO> donorTransactionsDTOS = new ArrayList<>();
+        DonorTransactionsDTO donor = new DonorTransactionsDTO();
+        donor.setDonorEmail(donorProfile.getDonorEmail());
+        donor.setDonorID(donorProfile.getDonorID());
+        donor.setDonorName(donorProfile.getDonorName());
+        donor.setTransactionId(donorTransaction.getTransactionId());
+        donor.setAmount(donorTransaction.getAmount());
+        donor.setTransactionDate(donorTransaction.getTransactionDate());
+        donor.setFiscalYear(donorTransaction.getFiscalYear());
+        donor.setInvoiceId(donorTransaction.getInvoiceId());
+        donor.setTransactionMode(donorTransaction.getTransactionMode());
+        donorTransactionsDTOS.add(donor);
+        List<DonorTransactionsDTO> response = transactionService.getAllTransactionsWithDonorInfo();
+        assertEquals(donorTransactionsDTOS, response);
+    }
+
+
+    @Test
+    void testGetTransactionsByDonorEmail(){
+        List<DonorTransactions> transactions = new ArrayList<>();
+        transactions.add(donorTransaction);
+        when(transactionRepository.findByDonorProfileDonorEmail(anyString())).thenReturn(transactions);
+        List<DonorTransactionsDTO> donorTransactionsDTOS = new ArrayList<>();
+        DonorTransactionsDTO donor = new DonorTransactionsDTO();
+        donor.setDonorEmail(donorProfile.getDonorEmail());
+        donor.setDonorID(donorProfile.getDonorID());
+        donor.setDonorName(donorProfile.getDonorName());
+        donor.setTransactionId(donorTransaction.getTransactionId());
+        donor.setAmount(donorTransaction.getAmount());
+        donor.setTransactionDate(donorTransaction.getTransactionDate());
+        donor.setFiscalYear(donorTransaction.getFiscalYear());
+        donor.setInvoiceId(donorTransaction.getInvoiceId());
+        donor.setTransactionMode(donorTransaction.getTransactionMode());
+        donorTransactionsDTOS.add(donor);
+        List<DonorTransactionsDTO> response = transactionService.getTransactionsByDonorEmail(donorProfile.getDonorEmail());
+        assertEquals(donorTransactionsDTOS, response);
+    }
 
     @Test
     void testGenerateInvoiceId(){

@@ -29,6 +29,7 @@ public class AdminController {
     @Autowired
     private final DonorRepository donorRepository;
 
+
     @Autowired
     public AdminController(DonorService donorService, TransactionService transactionService, DonorRepository donorRepository) {
         this.donorService = donorService;
@@ -38,50 +39,33 @@ public class AdminController {
 
     @GetMapping("/getAllDonors")
     public ResponseEntity<?> getAllDonors() {
-        try {
-            List<DonorProfile> donors = donorRepository.findAll();
-
-            List<DonorProfileDTO> donorDTOs = new ArrayList<>();
-            for (DonorProfile donor : donors) {
-                DonorProfileDTO donorDTO = new DonorProfileDTO();
-                donorDTO.setDonorID(donor.getDonorID());
-                donorDTO.setDonorName(donor.getDonorName());
-                donorDTO.setDonorAddress(donor.getDonorAddress());
-                donorDTO.setDateOfBirth(donor.getDateOfBirth());
-                donorDTO.setDonorAmount(donor.getDonorAmount());
-                donorDTO.setDonorEmail(donor.getDonorEmail());
-                donorDTO.setDonorPan(donor.getDonorPan());
-
-                donorDTOs.add(donorDTO);
-            }
-
-            return donorDTOs.isEmpty() ?
-                    ResponseEntity.noContent().build() :
-                    ResponseEntity.ok(donorDTOs);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to get all donors");
+        List<DonorProfileDTO> donorDTOs = donorService.getAllDonors();
+        if(donorDTOs.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        else{
+            return ResponseEntity.ok(donorDTOs);
         }
     }
-
     @GetMapping("/getAllTransactions")
     public ResponseEntity<List<DonorTransactionsDTO>> getAllTransactionsWithDonorInfo(){
-        try{
-            List<DonorTransactionsDTO> AllTransactions = transactionService.getAllTransactionsWithDonorInfo();
-            return ResponseEntity.ok(AllTransactions);
+        List<DonorTransactionsDTO> AllTransactions = transactionService.getAllTransactionsWithDonorInfo();
+        if(AllTransactions.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
-        catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        else{
+            return ResponseEntity.ok(AllTransactions);
         }
     }
 
     @GetMapping("/getTransactionsWithEmail")
     public ResponseEntity<List<DonorTransactionsDTO>> getTransactionsWithEmail(@RequestParam String donorEmail){
-        try{
-            List<DonorTransactionsDTO> AllTransactions = transactionService.getTransactionsByDonorEmail(donorEmail);
-            return ResponseEntity.ok(AllTransactions);
+        List<DonorTransactionsDTO> AllTransactions = transactionService.getTransactionsByDonorEmail(donorEmail);
+        if(AllTransactions.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
-        catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        else{
+            return ResponseEntity.ok(AllTransactions);
         }
     }
 }

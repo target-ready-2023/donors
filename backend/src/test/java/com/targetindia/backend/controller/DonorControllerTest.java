@@ -5,7 +5,6 @@ import com.targetindia.backend.dto.TransactionDetailsDTO;
 import com.targetindia.backend.entity.DonorProfile;
 import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.DonorRepository;
-import com.targetindia.backend.repository.TransactionRepository;
 import com.targetindia.backend.service.DonorService;
 import com.targetindia.backend.service.TransactionService;
 import org.junit.jupiter.api.AfterEach;

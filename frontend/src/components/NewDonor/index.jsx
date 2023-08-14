@@ -30,7 +30,7 @@ const options = [
 
 
 
-const NewCustomer = () => {
+const NewDonor = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -269,10 +269,10 @@ const NewCustomer = () => {
           </form>
         </div>
         <hr style={{ margin: "50px" }} />
-        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING DONOR</Link></p>
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingDonor">EXISTING DONOR</Link></p>
       </div>
     </React.Fragment>
   );
 };
 
-export default NewCustomer;
+export default NewDonor;

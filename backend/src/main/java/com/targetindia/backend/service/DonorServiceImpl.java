@@ -1,6 +1,7 @@
 package com.targetindia.backend.service;
 
 import com.targetindia.backend.dto.DonorDetailsDTO;
+import com.targetindia.backend.dto.DonorProfileDTO;
 import com.targetindia.backend.entity.DonorProfile;
 import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.DonorRepository;
@@ -8,6 +9,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -49,6 +51,24 @@ public class DonorServiceImpl implements DonorService{
         donorProfile.setDonorAmount(donorProfile.getDonorAmount() + transaction.getAmount());
         donorProfile.getTransactions().add(transaction);
         return donorRepository.save(donorProfile);
+    }
+
+    @Override
+    public List<DonorProfileDTO> getAllDonors(){
+        List<DonorProfile> donors = donorRepository.findAll();
+        List<DonorProfileDTO> donorDTOs = new ArrayList<>();
+        for (DonorProfile donor : donors) {
+            DonorProfileDTO donorDTO = new DonorProfileDTO();
+            donorDTO.setDonorID(donor.getDonorID());
+            donorDTO.setDonorName(donor.getDonorName());
+            donorDTO.setDonorAddress(donor.getDonorAddress());
+            donorDTO.setDateOfBirth(donor.getDateOfBirth());
+            donorDTO.setDonorAmount(donor.getDonorAmount());
+            donorDTO.setDonorEmail(donor.getDonorEmail());
+            donorDTO.setDonorPan(donor.getDonorPan());
+            donorDTOs.add(donorDTO);
+        }
+        return donorDTOs;
     }
 
 }

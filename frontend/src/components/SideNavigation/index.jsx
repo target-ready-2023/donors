@@ -25,12 +25,12 @@ const SideNavigation = () => {
   }
   
   const handleNewDonor = () => {
-    navigate('/NewCustomer')
+    navigate('/NewDonor')
     handleClose()
   }
 
   const handleExistingDonor = () => {
-    navigate('/ExistingCustomer')
+    navigate('/ExistingDonor')
     handleClose()
   }
 

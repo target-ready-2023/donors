@@ -20,15 +20,4 @@ public class TransactionController {
     @Autowired
     private TransactionRepository transactionRepository;
 
-//    API for getting all transactions from database
-//    @GetMapping("/getTransactions")
-//    public ResponseEntity<List<DonorTransactions>> getAllTransactions(){
-//        try{
-//            List<DonorTransactions> transactions = transactionService.getAllTransactions();
-//            return ResponseEntity.ok(transactions);
-//        }
-//        catch(Exception e){
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-//        }
-//    }
 }

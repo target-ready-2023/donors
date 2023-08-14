@@ -1,6 +1,7 @@
 package com.targetindia.backend.service;
 
 import com.targetindia.backend.dto.DonorDetailsDTO;
+import com.targetindia.backend.dto.DonorProfileDTO;
 import com.targetindia.backend.entity.DonorProfile;
 import com.targetindia.backend.entity.DonorTransactions;
 import com.targetindia.backend.repository.DonorRepository;
@@ -46,7 +47,6 @@ public class DonorServiceImplTest {
                 dateFormat.parse(transactionDate),
                 "TXN-12345678",
                 "FY2023-2024");
-        transactions.add(donorTransaction);
         donorProfile = new DonorProfile("DN-0001",
                 "Srilaxmi Jaina",
                 "Hyderabad, Telangana",
@@ -55,13 +55,15 @@ public class DonorServiceImplTest {
                 "srilaxmijaina.01@gmail.com",
                 "1234567890",
                 transactions);
+        donorTransaction.setDonorProfile(donorProfile);
+        transactions.add(donorTransaction);
+        donorProfile.getTransactions().add(donorTransaction);
     }
 
     @AfterEach
     void tearDown() {
         donorTransaction = null;
         donorProfile = null;
-        donorRepository.deleteAll();
     }
 
     @Test
@@ -103,5 +105,26 @@ public class DonorServiceImplTest {
         DonorProfile result = donorService.addTransactionToDonorProfile(donorProfile.getDonorEmail(), donorProfile.getTransactions().get(0));
         verify(donorRepository).save(donorProfile);
         assertEquals(donorProfile, result);
+    }
+
+    @Test
+    void testGetAllDonors(){
+        List<DonorProfile> donors = new ArrayList<>();
+        donors.add(donorProfile);
+        List<DonorProfileDTO> donorProfileDTOS = new ArrayList<>();
+        DonorProfileDTO donor = new DonorProfileDTO();
+        donor.setDonorEmail(donorProfile.getDonorEmail());
+        donor.setDonorID(donorProfile.getDonorID());
+        donor.setDonorAmount(donorProfile.getDonorAmount());
+        donor.setDonorName(donorProfile.getDonorName());
+        donor.setDonorPan(donorProfile.getDonorPan());
+        donor.setDonorAddress(donorProfile.getDonorAddress());
+        donor.setDateOfBirth(donorProfile.getDateOfBirth());
+        donorProfileDTOS.add(donor);
+        when(donorRepository.findAll()).thenReturn(donors);
+        List<DonorProfileDTO> AllDonors = donorService.getAllDonors();
+        assertEquals(donorProfileDTOS, AllDonors);
+        assertNotNull(AllDonors);
+        verify(donorRepository).findAll();
     }
 }
