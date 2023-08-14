@@ -35,7 +35,7 @@ function Homef() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to="/newCustomer" style={{ textDecoration: "none" }}>
+              <Link to="/newDonor" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
                   sx={{
@@ -70,7 +70,7 @@ function Homef() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to="/existingCustomer" style={{ textDecoration: "none" }}>
+              <Link to="/existingDonor" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
                   sx={{

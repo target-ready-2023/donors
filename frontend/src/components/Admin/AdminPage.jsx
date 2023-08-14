@@ -97,7 +97,7 @@ const AdminPage = () => {
                               width: "200px",
                             }}
                           >
-                            Transaction of a Particular Donor
+                            Transactions of a Particular Donor
                           </Button>
                         </Link>
                       </TableCell>
