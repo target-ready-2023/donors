@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692103276631" clover="3.2.0">
-  <project timestamp="1692103276631" name="All files">
-    <metrics statements="210" coveredstatements="41" conditionals="26" coveredconditionals="5" methods="75" coveredmethods="9" elements="311" coveredelements="55" complexity="0" loc="210" ncloc="210" packages="14" files="19" classes="19"/>
+<coverage generated="1692122651571" clover="3.2.0">
+  <project timestamp="1692122651571" name="All files">
+    <metrics statements="211" coveredstatements="38" conditionals="26" coveredconditionals="5" methods="79" coveredmethods="9" elements="316" coveredelements="52" complexity="0" loc="211" ncloc="211" packages="14" files="18" classes="18"/>
     <package name="src">
       <metrics statements="12" coveredstatements="2" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="1"/>
-      <file name="App.js" path="C:\Users\user\Documents\donors\frontend\src\App.js">
+      <file name="App.js" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\App.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="6" count="0" type="stmt"/>
       </file>
-      <file name="index.js" path="C:\Users\user\Documents\donors\frontend\src\index.js">
+      <file name="index.js" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\index.js">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="reportWebVitals.js" path="C:\Users\user\Documents\donors\frontend\src\reportWebVitals.js">
+      <file name="reportWebVitals.js" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\reportWebVitals.js">
         <metrics statements="8" coveredstatements="2" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="2" type="cond" truecount="3" falsecount="1"/>
@@ -27,60 +27,52 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="PageRoutes.js" path="C:\Users\user\Documents\donors\frontend\src\components\PageRoutes.js">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="13" count="2" type="stmt"/>
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="PageRoutes.js" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\PageRoutes.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Admin">
-      <metrics statements="27" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-      <file name="AdminPage.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Admin\AdminPage.jsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="17" count="2" type="stmt"/>
+      <metrics statements="22" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <file name="AdminPage.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Admin\AdminPage.jsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
       </file>
-      <file name="AllDonor.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Admin\AllDonor.jsx">
-        <metrics statements="10" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="18" count="2" type="stmt"/>
+      <file name="AllDonor.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Admin\AllDonor.jsx">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
       </file>
-      <file name="AllTransaction.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Admin\AllTransaction.jsx">
-        <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="19" count="2" type="stmt"/>
+      <file name="AllTransaction.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Admin\AllTransaction.jsx">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-      </file>
-      <file name="TransactionOfParticularDonar.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Admin\TransactionOfParticularDonar.jsx">
-        <metrics statements="7" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Certificate">
-      <metrics statements="32" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Certificate\index.jsx">
-        <metrics statements="32" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="17" count="2" type="stmt"/>
+      <metrics statements="32" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Certificate\index.jsx">
+        <metrics statements="32" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
@@ -116,10 +108,10 @@
     </package>
     <package name="src.components.ExistingDonor">
       <metrics statements="48" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="17" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\ExistingDonor\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\ExistingDonor\index.jsx">
         <metrics statements="48" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="17" coveredmethods="0"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
@@ -170,7 +162,7 @@
     </package>
     <package name="src.components.Footer">
       <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Footer\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Footer\index.jsx">
         <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
         <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -178,40 +170,40 @@
     </package>
     <package name="src.components.Header">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Header\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Header\index.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Homef">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Homef\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Homef\index.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="15" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.LandingPage">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\LandingPage\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\LandingPage\index.jsx">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Logo">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\Logo\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\Logo\index.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.components.NewDonor">
       <metrics statements="45" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\NewDonor\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\NewDonor\index.jsx">
         <metrics statements="45" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
@@ -258,18 +250,18 @@
       </file>
     </package>
     <package name="src.components.NotFound">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\NotFound\index.jsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="2" type="stmt"/>
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\NotFound\index.jsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.SideNavigation">
       <metrics statements="21" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\user\Documents\donors\frontend\src\components\SideNavigation\index.jsx">
+      <file name="index.jsx" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\components\SideNavigation\index.jsx">
         <metrics statements="21" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="1"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
@@ -289,26 +281,32 @@
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
-      <file name="ApiService.js" path="C:\Users\user\Documents\donors\frontend\src\services\ApiService.js">
-        <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="31" count="5" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+      <metrics statements="19" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
+      <file name="ApiService.js" path="C:\Users\anjal\OneDrive\Desktop\project\donors\frontend\src\services\ApiService.js">
+        <metrics statements="19" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
       </file>
     </package>
   </project>

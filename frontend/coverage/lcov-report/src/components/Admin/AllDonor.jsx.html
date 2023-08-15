@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -189,14 +189,7 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,8 +205,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -232,13 +224,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -327,14 +315,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect } from "react";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState} from "react";
 &nbsp;
 import {
-  TextField,
+  
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -346,7 +331,7 @@ import {
 &nbsp;
 import {getallDonarDetail} from "../../services/ApiService"
 &nbsp;
-const AllDonar = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+ export const AllDonor = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
   const [getAllDonarsDetail, setGetAllDonarsDetail] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
   const fetchDetails = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
@@ -363,12 +348,7 @@ const AllDonar = <span class="fstat-no" title="function not covered" >()</span> 
     
   }
 &nbsp;
-  // const [postAllDonars, setPostAllDonars] = useState([]);
-  // useEffect(() =&gt; {
-  //    axios.get(apiUrl).then((response) =&gt; {
-  //      setPostAllDonars(response.data);
-  //    })
-  //  }, [setPostAllDonars]);
+  
 &nbsp;
    const allDonars = <span class="cstat-no" title="statement not covered" >getAllDonarsDetail.map(<span class="fstat-no" title="function not covered" >(d</span>onar) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
@@ -380,7 +360,8 @@ const AllDonar = <span class="fstat-no" title="function not covered" >()</span> 
                       &lt;TableCell&gt;{donar.donorPan}&lt;/TableCell&gt;
                       {/* &lt;TableCell&gt;{transactionDate}&lt;/TableCell&gt; */}
                       &lt;TableCell&gt;{donar.dateOfBirth}&lt;/TableCell&gt;
-                      {/* &lt;TableCell&gt;{amount}&lt;/TableCell&gt; */}
+                      &lt;TableCell&gt;{donar.donorAmount
+}&lt;/TableCell&gt;
                     &lt;/TableRow&gt;
                   &lt;/TableBody&gt;
   &lt;/&gt;
@@ -426,7 +407,7 @@ const AllDonar = <span class="fstat-no" title="function not covered" >()</span> 
                       &lt;TableCell&gt;Address&lt;/TableCell&gt;
                       &lt;TableCell&gt;PAN&lt;/TableCell&gt;
                       &lt;TableCell&gt;Date of Birth&lt;/TableCell&gt;
-                      {/* &lt;TableCell&gt;Amount&lt;/TableCell&gt; */}
+                      &lt;TableCell&gt;Amount&lt;/TableCell&gt;
                     &lt;/TableRow&gt;
                   &lt;/TableHead&gt;
                   
@@ -460,8 +441,6 @@ const AllDonar = <span class="fstat-no" title="function not covered" >()</span> 
     &lt;/React.Fragment&gt;
   );
 };
-&nbsp;
-export default AllDonar;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -469,7 +448,7 @@ export default AllDonar;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T12:41:16.498Z
+                at 2023-08-15T18:04:11.526Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -22,33 +22,48 @@ describe("SideNavigation component", () => {
       </MemoryRouter>
     );
   });
+  it("navigates to different routes when menu items are clicked", async () => {
+    const mockNavigate = jest.fn();
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <SideNavigation />
+      </MemoryRouter>
+    );
 
-//   it("navigates to different routes when menu items are clicked", () => {
-//     const { getByTestId } = render(
-//       <MemoryRouter>
-//         <SideNavigation />
-//       </MemoryRouter>
-//     );
+    const menuButton = getByTestId("side-navigation");
+    fireEvent.click(menuButton);
 
-//     const menuButton = getByTestId("side-navigation");
-//     fireEvent.click(menuButton);
+    const homeMenuItem = getByTestId("home-menu-item");
+    fireEvent.click(homeMenuItem);
+    expect(window.location.pathname).toBe("/");
 
-//     const homeMenuItem = getByTestId("home-menu-item");
-//     fireEvent.click(homeMenuItem);
-//     expect(window.location.pathname).toBe("/");
+    const newDonorMenuItem = getByTestId("new-donor-menu");
+  fireEvent.click(newDonorMenuItem);
 
-//     const newDonorMenuItem = getByTestId("new-donor-menu");
-//     fireEvent.click(newDonorMenuItem);
-//     expect(window.location.pathname).toBe("/NewCustomer");
+    await waitFor(() => {
+    expect(navigateMock).toHaveBeenCalledWith('/NewCustomer');
+  });
 
-//     const existingDonorMenuItem = getByTestId("existing-donor-menu");
-//     fireEvent.click(existingDonorMenuItem);
-//     expect(window.location.pathname).toBe("/ExistingCustomer");
+  const existingDonorMenuItem = getByTestId("existing-donor-menu");
+  fireEvent.click(existingDonorMenuItem );
 
-//     const taxCertificateMenuItem = getByTestId("tax-certificate-menu");
-//     fireEvent.click(taxCertificateMenuItem);
-//     expect(window.location.pathname).toBe("/Certificate");
-//   });
+    await waitFor(() => {
+    expect(navigateMock).toHaveBeenCalledWith('/ExistingCustomer');
+  });
+
+   
+const taxCertificateMenuItem = getByTestId("tax-certificate-menu");
+fireEvent.click(taxCertificateMenuItem );
+
+  await waitFor(() => {
+  expect(navigateMock).toHaveBeenCalledWith('/Certificate');
+});
+
+
+
+  });
+
+
 
   it("renders and matches snapshot", () => {
     const { container } = render(<SideNavigation />);

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -175,7 +175,16 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,22 +200,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,6 +230,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,13 +296,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import swal from "sweetalert";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState} from "react";
+&nbsp;
 import {
-  TextField,
+  
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -302,16 +318,38 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
+import {getAllTransaction} from "../../services/ApiService"
 &nbsp;
 &nbsp;
+const AllTransaction = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  const [getAllTrans, setGetAllTrans] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
+  const fetchDetails = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
+    // console.log("Donor Email : ", donorEmail);
+<span class="cstat-no" title="statement not covered" >    getAllTransaction()</span>
+    .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
+<span class="cstat-no" title="statement not covered" >      setGetAllTrans(response.data);</span>
+<span class="cstat-no" title="statement not covered" >      console.log("response : ", response.data);</span>
+    },[setGetAllTrans])
+    
+  }
 &nbsp;
-const AllTransaction = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-  const [name, setName] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  const [invoiceID, setinvoiceID] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  const [transactionId, setTransactionId] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  const [transactionDate, setTransactionDate] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  const [fiscalYear, setFiscalYear] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  const [email,setEmail]=<span class="cstat-no" title="statement not covered" >useState("");</span>
+  const allTrans = <span class="cstat-no" title="statement not covered" >getAllTrans.map(<span class="fstat-no" title="function not covered" >(d</span>onar) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
+    &lt;TableBody&gt;
+                    &lt;TableRow&gt;
+                      &lt;TableCell&gt;{donar.donorName}&lt;/TableCell&gt;
+                      &lt;TableCell&gt;{donar.donorEmail}&lt;/TableCell&gt;
+                      &lt;TableCell&gt;{donar.invoiceId}&lt;/TableCell&gt;
+                      &lt;TableCell&gt;{donar.transactionId}&lt;/TableCell&gt;
+                      {/* &lt;TableCell&gt;{transactionDate}&lt;/TableCell&gt; */}
+                      &lt;TableCell&gt;{donar.transactionDate}&lt;/TableCell&gt;
+                      &lt;TableCell&gt;{donar.amount}&lt;/TableCell&gt;
+                      &lt;TableCell&gt;{donar.fiscalYear}&lt;/TableCell&gt;
+                    &lt;/TableRow&gt;
+                  &lt;/TableBody&gt;
+  &lt;/&gt;
+  ));
   
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;React.Fragment&gt;
@@ -347,27 +385,17 @@ const AllTransaction = <span class="fstat-no" title="function not covered" >()</
                       }}
                     &gt;
                       {/* &lt;TableCell sx={{ width: "30%" }}&gt;Email ID&lt;/TableCell&gt; */}
-                   
-                      &lt;TableCell&gt;Invoice ID&lt;/TableCell&gt;
-                      &lt;TableCell&gt;Transaction Id&lt;/TableCell&gt;
                       &lt;TableCell&gt;Name&lt;/TableCell&gt;
                       &lt;TableCell&gt;Email Id&lt;/TableCell&gt;
+                      &lt;TableCell&gt;Invoice ID&lt;/TableCell&gt;
+                      &lt;TableCell&gt;Transaction Id&lt;/TableCell&gt;
+                      
                       &lt;TableCell&gt;Transaction Date&lt;/TableCell&gt;
+                      &lt;TableCell&gt;Amount&lt;/TableCell&gt;
                       &lt;TableCell&gt;Fiscal Year&lt;/TableCell&gt;
                     &lt;/TableRow&gt;
                   &lt;/TableHead&gt;
-                  &lt;TableBody&gt;
-                    &lt;TableRow&gt;
-                    &lt;TableRow&gt;
-                    &lt;TableCell&gt;{invoiceID}&lt;/TableCell&gt;
-                    &lt;TableCell&gt;{transactionId}&lt;/TableCell&gt;
-                      &lt;TableCell&gt;{name}&lt;/TableCell&gt;
-                      &lt;TableCell&gt;{email}&lt;/TableCell&gt;
-                      &lt;TableCell&gt;{transactionDate}&lt;/TableCell&gt;
-                      &lt;TableCell&gt;{fiscalYear}&lt;/TableCell&gt;
-                    &lt;/TableRow&gt;
-                    &lt;/TableRow&gt;
-                  &lt;/TableBody&gt;
+                 {allTrans}
                 &lt;/Table&gt;
               &lt;/TableContainer&gt;
             &lt;/Grid&gt;
@@ -386,7 +414,7 @@ const AllTransaction = <span class="fstat-no" title="function not covered" >()</
                 }}
                 type="submit"
                 // disabled={isSubmitDisabled}
-                // onClick={fetchDetails}
+                onClick={fetchDetails}
               &gt;
                 Fetch Details
               &lt;/Button&gt;
@@ -398,15 +426,14 @@ const AllTransaction = <span class="fstat-no" title="function not covered" >()</
   );
 };
 &nbsp;
-export default AllTransaction;
-&nbsp;</pre></td></tr></table></pre>
+export default AllTransaction;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T12:41:16.498Z
+                at 2023-08-15T18:04:11.526Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
