@@ -27,10 +27,11 @@ export default function Footer() {
           <hr/>
             <Typography variant="body2" color="text.secondary">
               Dream School Foundation was established in Bangalore, India in
-              2005 by a group of passionate volunteers. Through our work, we
+              2005 by a group of passionate volunteers.
+              {/* Through our work, we
               strive to break the cycle of the socio- economic vulnerability of
               children and families, and help them to help themselves, through
-              equity and quality in education.
+              equity and quality in education. */}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -53,30 +54,24 @@ export default function Footer() {
               Follow Us
             </Typography>
             <hr/>
-            <Link href="https://www.facebook.com/" color="inherit">
+            <Link href="https://www.facebook.com/" color="inherit" data-testid="facebook-icon">
               <Facebook />
             </Link>
             <Link
               href="https://www.instagram.com/"
-              color="inherit"
+              color="inherit" data-testid="instagram-icon"
               sx={{ pl: 1, pr: 1 }}
             >
               <Instagram />
             </Link>
-            <Link href="https://www.twitter.com/" color="inherit">
+            <Link href="https://www.twitter.com/" color="inherit"data-testid="twitter-icon">
               <Twitter />
             </Link>
           </Grid>
         </Grid>
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
-            {"Copyright © "}
-            {new Date().getFullYear()}
-            {" "}
-            <Link color="inherit" href="https://www.dsfindia.org/">
-              Dream School Foundation.
-            </Link>{" "}
-            All rights reserved.
+            {"Copyright © "} {new Date().getFullYear()} {" "} <Link color="inherit" href="https://www.dsfindia.org/">   Dream School Foundation.</Link>{" "} All rights reserved.
           </Typography>
         </Box>
       </Container>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -142,12 +142,7 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,17 +151,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,15 +229,15 @@ import Grid from "@mui/material/Grid";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Footer(</span>) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+export default function Footer() {
+  return (
     &lt;Box
       component="footer"
       sx={{
-        backgroundColor: <span class="fstat-no" title="function not covered" >(t</span>heme) =&gt;
-<span class="cstat-no" title="statement not covered" >          theme.palette.mode === "light"</span>
+        backgroundColor: (theme) =&gt;
+          theme.palette.mode === "light"
             ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+            : <span class="branch-1 cbranch-no" title="branch not covered" >theme.palette.grey[800],</span>
         p: 6,
       }}
     &gt;
@@ -260,10 +250,11 @@ export default function <span class="fstat-no" title="function not covered" >Foo
           &lt;hr/&gt;
             &lt;Typography variant="body2" color="text.secondary"&gt;
               Dream School Foundation was established in Bangalore, India in
-              2005 by a group of passionate volunteers. Through our work, we
+              2005 by a group of passionate volunteers.
+              {/* Through our work, we
               strive to break the cycle of the socio- economic vulnerability of
               children and families, and help them to help themselves, through
-              equity and quality in education.
+              equity and quality in education. */}
             &lt;/Typography&gt;
           &lt;/Grid&gt;
           &lt;Grid item xs={12} sm={4}&gt;
@@ -286,30 +277,24 @@ export default function <span class="fstat-no" title="function not covered" >Foo
               Follow Us
             &lt;/Typography&gt;
             &lt;hr/&gt;
-            &lt;Link href="https://www.facebook.com/" color="inherit"&gt;
+            &lt;Link href="https://www.facebook.com/" color="inherit" data-testid="facebook-icon"&gt;
               &lt;Facebook /&gt;
             &lt;/Link&gt;
             &lt;Link
               href="https://www.instagram.com/"
-              color="inherit"
+              color="inherit" data-testid="instagram-icon"
               sx={{ pl: 1, pr: 1 }}
             &gt;
               &lt;Instagram /&gt;
             &lt;/Link&gt;
-            &lt;Link href="https://www.twitter.com/" color="inherit"&gt;
+            &lt;Link href="https://www.twitter.com/" color="inherit"data-testid="twitter-icon"&gt;
               &lt;Twitter /&gt;
             &lt;/Link&gt;
           &lt;/Grid&gt;
         &lt;/Grid&gt;
         &lt;Box mt={5}&gt;
           &lt;Typography variant="body2" color="text.secondary" align="center"&gt;
-            {"Copyright © "}
-            {new Date().getFullYear()}
-            {" "}
-            &lt;Link color="inherit" href="https://www.dsfindia.org/"&gt;
-              Dream School Foundation.
-            &lt;/Link&gt;{" "}
-            All rights reserved.
+            {"Copyright © "} {new Date().getFullYear()} {" "} &lt;Link color="inherit" href="https://www.dsfindia.org/"&gt;   Dream School Foundation.&lt;/Link&gt;{" "} All rights reserved.
           &lt;/Typography&gt;
         &lt;/Box&gt;
       &lt;/Container&gt;
@@ -322,7 +307,7 @@ export default function <span class="fstat-no" title="function not covered" >Foo
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T12:14:17.855Z
+                at 2023-08-15T17:15:40.381Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
