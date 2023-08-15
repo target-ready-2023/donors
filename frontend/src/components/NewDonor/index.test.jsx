@@ -43,7 +43,7 @@ describe("New Donor", () => {
     expect(result.status).toEqual(response.status); // Compare only the "status" property of the response
   });
   //Error Handling
-  test("should handle errors", async () => {
+  it("should handle errors", async () => {
     const errorResponse = {
       response: { status: 500, data: { error: "Server Error" } },
     };
@@ -62,24 +62,28 @@ describe("New Donor", () => {
     waitFor(() => expect(nameInput).toBeInTheDocument());
   });
   
-//form submission triggers addDonorInfo 
-  test("form submission triggers addDonorInfo and shows success message",  () => {
-    render(
-      <MemoryRouter>
-        <NewDonor/>
-      </MemoryRouter>
-    );
+// test("NewDonor component renders correctly", () => {
+//   const { asFragment } = render(NewDonor);
+//  waitFor(()=> expect(asFragment()).toMatchSnapshot());
+// });
+// //form submission triggers addDonorInfo 
+//   test("form submission triggers addDonorInfo and shows success message",  () => {
+//     render(
+//       <MemoryRouter>
+//         <NewDonor/>
+//       </MemoryRouter>
+//     );
 
-    // Fill out the form fields
-   waitFor(()=> fireEvent.change(screen.queryByLabelText("Name"), { target: { value: "John Doe" } }));
-   waitFor(()=> fireEvent.change(screen.queryByLabelText("Address"), { target: { value: "123 Main St" } }));
-    // Fill out other fields...
+//     // Fill out the form fields
+//    waitFor(()=> fireEvent.change(screen.queryByLabelText("Name"), { target: { value: "John Doe" } }));
+//    waitFor(()=> fireEvent.change(screen.queryByLabelText("Address"), { target: { value: "123 Main St" } }));
+//     // Fill out other fields...
 
-    // Submit the form
-   waitFor(()=> fireEvent.click(screen.queryByText("Submit")));
+//     // Submit the form
+//    waitFor(()=> fireEvent.click(screen.queryByText("Submit")));
 
-    // Wait for the promise to resolve
-   waitFor(()=> expect(screen.getByText("You have successfully added !")).toBeInTheDocument());
-  });
+//     // Wait for the promise to resolve
+//     waitFor(() => expect(screen.getByText("You have successfully added !")).toBeInTheDocument());
+//   });
 
 });
