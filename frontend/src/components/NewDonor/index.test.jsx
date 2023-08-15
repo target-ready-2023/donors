@@ -3,7 +3,7 @@ import { addDonorInfo } from "../../services/ApiService";
 import { render, screen, fireEvent } from "@testing-library/react";
 import NewDonor from "./index";
 import { waitFor } from "@testing-library/react";
-
+import { MemoryRouter } from "react-router-dom"; 
 jest.mock("axios");
 
 describe("New Donor", () => {
@@ -53,7 +53,11 @@ describe("New Donor", () => {
   });
   //Rendering NewDonor
   test("renders the NewDonor component", () => {
-    render(NewDonor);
+    render(
+      <MemoryRouter>
+        <NewDonor/>
+      </MemoryRouter>
+    );
     const nameInput = screen.queryByLabelText("Name");
     waitFor(() => expect(nameInput).toBeInTheDocument());
   });

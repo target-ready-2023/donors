@@ -2,6 +2,7 @@ import axios from 'axios';
 import { addTransactionInfo } from '../../services/ApiService';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import ExistingDonorPage from './index';
+import { MemoryRouter } from "react-router-dom";
 jest.mock('axios');
 
   
@@ -40,7 +41,11 @@ jest.mock('axios');
               }));
     });
     test('fetches donor details on button click', () => {
-        render(ExistingDonorPage);
+        render(
+          <MemoryRouter>
+            <ExistingDonorPage/>
+          </MemoryRouter>
+        );
         
         const emailInput = screen.queryByLabelText('Email-Id');
      waitFor(()=>fireEvent.change(emailInput, { target: { value: 'test@example.com' } }));

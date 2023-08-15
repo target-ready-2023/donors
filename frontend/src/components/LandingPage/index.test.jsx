@@ -1,16 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import {LandingPage} from './index';
+import LandingPage from './index';
 import { waitFor } from '@testing-library/react';
-
+import { MemoryRouter } from "react-router-dom";
 describe('LandingPage', () => {
-  it('should render without errors', () => {
-    render(LandingPage);
-    const landingPageElement = screen.queryByTestId('landing-page');
-   waitFor(()=> expect(landingPageElement).toBeInTheDocument());
+  test('should render without errors', () => {
+    render(
+    <MemoryRouter>
+      <LandingPage/>
+      </MemoryRouter>);
+       const pageTitle = screen.queryByText("landing-page");
+       waitFor(()=> expect(pageTitle).toBeInTheDocument());
   });
 
   it('should display the image', () => {
-    render(LandingPage);
+    render(
+      <MemoryRouter>
+        <LandingPage/>
+      </MemoryRouter>
+    );
     const imageElement = screen.queryByTestId( 'landing-page-image' );
    waitFor(()=> expect(imageElement).toBeInTheDocument());
    waitFor(()=> expect(imageElement).toHaveAttribute(
@@ -19,7 +26,11 @@ describe('LandingPage', () => {
     ));
   });
   it('should render the Homef component', () => {
-    render(LandingPage);
+    render(
+      <MemoryRouter>
+        <LandingPage/>
+      </MemoryRouter>
+    );
     const homefComponent = screen.queryByTestId('homef-component');
     waitFor(()=> expect(homefComponent).toBeInTheDocument());
   });

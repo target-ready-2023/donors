@@ -2,7 +2,6 @@ import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import {App} from './App';
 
-// Mock the BrowserRouter
 jest.mock('react-router-dom', () => ({
   BrowserRouter: ({ children }) => <div>{children}</div>,
 }));

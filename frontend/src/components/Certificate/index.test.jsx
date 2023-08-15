@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { getDonorDetailsById,getCertificate,addTransactionInfo } from '../../services/ApiService';
-
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect"; // For extended jest matchers
+import EightyGCertificate from "./index"; // Update the path accordingly
+import { MemoryRouter } from "react-router-dom";
 jest.mock('axios');
 
   
@@ -41,4 +45,22 @@ jest.mock('axios');
     });
   
   });
+  describe("EightyGCertificate Component", () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
+    test("renders the form correctly", () => {
+      render(
+        <MemoryRouter>
+          <EightyGCertificate/>
+        </MemoryRouter>
+      );
+       // Test the page title
+    const pageTitle = screen.getByText("80G Certificate");
+    expect(pageTitle).toBeInTheDocument();
+    });
+
+    
+});
  
