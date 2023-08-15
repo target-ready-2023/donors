@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,10 +90,7 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,11 +102,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,11 +118,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Route, Routes } from "react-router-dom"
-&nbsp;
-import About from "./About"
 import NotFound from "./NotFound"
-import NewCustomer from "./NewDonor"
-import ExistingCustomer from "./ExistingCustomer"
+import NewDonor from "./NewDonor"
+import ExistingDonor from "./ExistingDonor"
 import Certificate from "./Certificate"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -137,18 +129,17 @@ import AllDonor from "./Admin/AllDonor"
 import AllTransaction from "./Admin/AllTransaction"
 import TransactionOfParticularEmail from "./Admin/TransactionOfParticularDonar"
 import AdminPage from "./Admin/AdminPage"
-const PageRoutes = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+const PageRoutes = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;Routes&gt;
           &lt;Route exact path="/" element={&lt;&gt;&lt;Header/&gt;&lt;LandingPage /&gt;&lt;Footer/&gt;&lt;/&gt;}/&gt;
-          &lt;Route exact path="/about" element={&lt;About /&gt;} /&gt;
           &lt;Route exact path="/admin" element={&lt;&gt;&lt;Header/&gt;&lt;AdminPage /&gt;&lt;Footer/&gt;&lt;/&gt;}/&gt;
           &lt;Route exact path="/admin/allDonor" element={&lt;&gt;&lt;Header/&gt;&lt;AllDonor /&gt;&lt;Footer/&gt;&lt;/&gt;}/&gt;
           &lt;Route exact path="/admin/allTransaction" element={&lt;&gt;&lt;Header/&gt;&lt;AllTransaction /&gt;&lt;Footer/&gt;&lt;/&gt;}/&gt;
           &lt;Route exact path="/admin/transactionOfParticularEmail" element={&lt;&gt;&lt;Header/&gt;&lt;TransactionOfParticularEmail /&gt;&lt;Footer/&gt;&lt;/&gt;}/&gt;
           &lt;Route exact path="/certificate" element={&lt;&gt;&lt;Header title="Tax Preparation"/&gt;&lt;Certificate /&gt;&lt;Footer/&gt;&lt;/&gt;} /&gt;
-          &lt;Route exact path="/newCustomer" element={&lt;&gt;&lt;Header title="New Donor"/&gt;&lt;NewCustomer /&gt;&lt;Footer/&gt;&lt;/&gt;} /&gt;
-          &lt;Route exact path="/existingCustomer" element={&lt;&gt;&lt;Header title="Existing Donor"/&gt;&lt;ExistingCustomer /&gt;&lt;Footer/&gt;&lt;/&gt;} /&gt;
+          &lt;Route exact path="/newCustomer" element={&lt;&gt;&lt;Header title="New Donor"/&gt;&lt;NewDonor /&gt;&lt;Footer/&gt;&lt;/&gt;} /&gt;
+          &lt;Route exact path="/existingCustomer" element={&lt;&gt;&lt;Header title="Existing Donor"/&gt;&lt;ExistingDonor /&gt;&lt;Footer/&gt;&lt;/&gt;} /&gt;
           &lt;Route path='*' element={&lt;NotFound /&gt;}/&gt;
         &lt;/Routes&gt;
     )
@@ -160,7 +151,7 @@ const PageRoutes = <span class="cstat-no" title="statement not covered" ><span c
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T10:51:47.018Z
+                at 2023-08-15T12:14:17.855Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

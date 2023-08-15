@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import {LandingPage} from './index';
 import { waitFor } from '@testing-library/react';
 
