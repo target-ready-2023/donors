@@ -1,9 +1,7 @@
 import { Route, Routes } from "react-router-dom"
-
-import About from "./About"
 import NotFound from "./NotFound"
-import NewCustomer from "./NewDonor"
-import ExistingCustomer from "./ExistingCustomer"
+import NewDonor from "./NewDonor"
+import ExistingDonor from "./ExistingDonor"
 import Certificate from "./Certificate"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -16,14 +14,13 @@ const PageRoutes = () => {
     return (
         <Routes>
           <Route exact path="/" element={<><Header/><LandingPage /><Footer/></>}/>
-          <Route exact path="/about" element={<About />} />
           <Route exact path="/admin" element={<><Header/><AdminPage /><Footer/></>}/>
           <Route exact path="/admin/allDonor" element={<><Header/><AllDonor /><Footer/></>}/>
           <Route exact path="/admin/allTransaction" element={<><Header/><AllTransaction /><Footer/></>}/>
           <Route exact path="/admin/transactionOfParticularEmail" element={<><Header/><TransactionOfParticularEmail /><Footer/></>}/>
           <Route exact path="/certificate" element={<><Header title="Tax Preparation"/><Certificate /><Footer/></>} />
-          <Route exact path="/newCustomer" element={<><Header title="New Donor"/><NewCustomer /><Footer/></>} />
-          <Route exact path="/existingCustomer" element={<><Header title="Existing Donor"/><ExistingCustomer /><Footer/></>} />
+          <Route exact path="/newCustomer" element={<><Header title="New Donor"/><NewDonor /><Footer/></>} />
+          <Route exact path="/existingCustomer" element={<><Header title="Existing Donor"/><ExistingDonor /><Footer/></>} />
           <Route path='*' element={<NotFound />}/>
         </Routes>
     )

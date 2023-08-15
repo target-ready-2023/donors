@@ -39,7 +39,7 @@ const options = [
 
 
 
-const ExistingCostumerPage = () => {
+const ExistingDonorPage = () => {
   const [donorEmail, setDonorEmail] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -294,4 +294,4 @@ const ExistingCostumerPage = () => {
   );
 };
 
-export default ExistingCostumerPage;
+export default ExistingDonorPage;
