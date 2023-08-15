@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692123365125" clover="3.2.0">
-  <project timestamp="1692123365125" name="All files">
-    <metrics statements="227" coveredstatements="88" conditionals="32" coveredconditionals="13" methods="85" coveredmethods="30" elements="344" coveredelements="131" complexity="0" loc="227" ncloc="227" packages="14" files="19" classes="19"/>
+<coverage generated="1692123472386" clover="3.2.0">
+  <project timestamp="1692123472387" name="All files">
+    <metrics statements="227" coveredstatements="90" conditionals="32" coveredconditionals="13" methods="85" coveredmethods="31" elements="344" coveredelements="134" complexity="0" loc="227" ncloc="227" packages="14" files="19" classes="19"/>
     <package name="src">
       <metrics statements="12" coveredstatements="2" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="1"/>
       <file name="App.js" path="C:\Users\user\Documents\80CG\donors\frontend\src\App.js">
@@ -277,30 +277,30 @@
       </file>
     </package>
     <package name="src.components.SideNavigation">
-      <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
       <file name="index.jsx" path="C:\Users\user\Documents\80CG\donors\frontend\src\components\SideNavigation\index.jsx">
-        <metrics statements="21" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
+        <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
         <line num="8" count="4" type="stmt"/>
-        <line num="9" count="13" type="stmt"/>
-        <line num="10" count="13" type="stmt"/>
-        <line num="11" count="13" type="stmt"/>
-        <line num="12" count="13" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="15" count="13" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="18" count="13" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="13" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="27" count="13" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="32" count="13" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="38" count="13" type="stmt"/>
+        <line num="9" count="16" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="16" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="18" count="16" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="16" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="16" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="16" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
