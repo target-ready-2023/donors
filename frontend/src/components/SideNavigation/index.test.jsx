@@ -1,7 +1,7 @@
 import React from "react";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen,waitFor } from "@testing-library/react";
 import SideNavigation from "./index";
-
+import { act } from "react-dom/test-utils";
 import { MemoryRouter, useNavigate } from "react-router-dom";
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -43,6 +43,9 @@ describe("SideNavigation component", () => {
     await waitFor(() => {
     expect(navigateMock).toHaveBeenCalledWith('/NewCustomer');
   });
+
+
+  expect(navigateMock).toHaveBeenCalledWith('/NewCustomer');
 
   const existingDonorMenuItem = getByTestId("existing-donor-menu");
   fireEvent.click(existingDonorMenuItem );
