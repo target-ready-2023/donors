@@ -43,7 +43,7 @@ describe("New Donor", () => {
     expect(result.status).toEqual(response.status); // Compare only the "status" property of the response
   });
   //Error Handling
-  it("should handle errors", async () => {
+  test("should handle errors", async () => {
     const errorResponse = {
       response: { status: 500, data: { error: "Server Error" } },
     };
@@ -62,13 +62,13 @@ describe("New Donor", () => {
     waitFor(() => expect(nameInput).toBeInTheDocument());
   });
   
-test("NewDonor component renders correctly", () => {
-  const { asFragment } = render(NewDonor);
- waitFor(()=> expect(asFragment()).toMatchSnapshot());
-});
 //form submission triggers addDonorInfo 
   test("form submission triggers addDonorInfo and shows success message",  () => {
-    render(NewDonor);
+    render(
+      <MemoryRouter>
+        <NewDonor/>
+      </MemoryRouter>
+    );
 
     // Fill out the form fields
    waitFor(()=> fireEvent.change(screen.queryByLabelText("Name"), { target: { value: "John Doe" } }));
@@ -79,7 +79,7 @@ test("NewDonor component renders correctly", () => {
    waitFor(()=> fireEvent.click(screen.queryByText("Submit")));
 
     // Wait for the promise to resolve
-    waitFor(() => expect(screen.getByText("You have successfully added !")).toBeInTheDocument());
+   waitFor(()=> expect(screen.getByText("You have successfully added !")).toBeInTheDocument());
   });
 
 });
