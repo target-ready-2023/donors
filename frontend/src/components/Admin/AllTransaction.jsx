@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import swal from "sweetalert";
+import React, { useState} from "react";
+
 import {
-  TextField,
+  
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -13,16 +11,38 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-
+import {getAllTransaction} from "../../services/ApiService"
 
 
 const AllTransaction = () => {
-  const [name, setName] = useState("");
-  const [invoiceID, setinvoiceID] = useState("");
-  const [transactionId, setTransactionId] = useState("");
-  const [transactionDate, setTransactionDate] = useState("");
-  const [fiscalYear, setFiscalYear] = useState("");
-  const [email,setEmail]=useState("");
+  const [getAllTrans, setGetAllTrans] = useState([]);
+  const fetchDetails = (event) => {
+    event.preventDefault();
+    // console.log("Donor Email : ", donorEmail);
+    getAllTransaction()
+    .then(response => {
+      setGetAllTrans(response.data);
+      console.log("response : ", response.data);
+    },[setGetAllTrans])
+    
+  }
+
+  const allTrans = getAllTrans.map((donar) => (
+    <>
+    <TableBody>
+                    <TableRow>
+                      <TableCell>{donar.donorName}</TableCell>
+                      <TableCell>{donar.donorEmail}</TableCell>
+                      <TableCell>{donar.invoiceId}</TableCell>
+                      <TableCell>{donar.transactionId}</TableCell>
+                      {/* <TableCell>{transactionDate}</TableCell> */}
+                      <TableCell>{donar.transactionDate}</TableCell>
+                      <TableCell>{donar.amount}</TableCell>
+                      <TableCell>{donar.fiscalYear}</TableCell>
+                    </TableRow>
+                  </TableBody>
+  </>
+  ));
   
   return (
     <React.Fragment>
@@ -58,27 +78,17 @@ const AllTransaction = () => {
                       }}
                     >
                       {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
-                   
-                      <TableCell>Invoice ID</TableCell>
-                      <TableCell>Transaction Id</TableCell>
                       <TableCell>Name</TableCell>
                       <TableCell>Email Id</TableCell>
+                      <TableCell>Invoice ID</TableCell>
+                      <TableCell>Transaction Id</TableCell>
+                      
                       <TableCell>Transaction Date</TableCell>
+                      <TableCell>Amount</TableCell>
                       <TableCell>Fiscal Year</TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody>
-                    <TableRow>
-                    <TableRow>
-                    <TableCell>{invoiceID}</TableCell>
-                    <TableCell>{transactionId}</TableCell>
-                      <TableCell>{name}</TableCell>
-                      <TableCell>{email}</TableCell>
-                      <TableCell>{transactionDate}</TableCell>
-                      <TableCell>{fiscalYear}</TableCell>
-                    </TableRow>
-                    </TableRow>
-                  </TableBody>
+                 {allTrans}
                 </Table>
               </TableContainer>
             </Grid>
@@ -97,7 +107,7 @@ const AllTransaction = () => {
                 }}
                 type="submit"
                 // disabled={isSubmitDisabled}
-                // onClick={fetchDetails}
+                onClick={fetchDetails}
               >
                 Fetch Details
               </Button>

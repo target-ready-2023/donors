@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import swal from "sweetalert";
+import React, { useState } from "react";
+
 import {
   TextField,
   Button,
-  MenuItem,
   Grid,
   Table,
   TableContainer,
@@ -14,17 +12,46 @@ import {
   TableBody,
 } from "@mui/material";
 
+import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
-
-const AllDonar = () => {
+ export const SingleDonor = () => {
+  const [donorEmail, setDonorEmail] = useState("");
   
-  const [InvoiceID, setInvoiceID] = useState("");
-  const [TransactionId, setTransactionId] = useState("");
-  const [transactionDate, setTransactionDate] = useState("");
-  const [amount, setAmount] = useState("");
-  const [TransactionMode, setTransactionMode] = useState("");
+  const isEmailValid = (donorEmail) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(donorEmail);
+  };
+  const [getAllTransaction,setGetAllTransaction] = useState([]);
+  const fetchDetails = (event) => {
+    event.preventDefault();
+    console.log("Donor Email : ", donorEmail);
+    getAllTransactionOfParticularDonor(donorEmail)
+    .then(response => {
+      setGetAllTransaction(response.data);
+      console.log("response : ", response.data);
+     
+    },[setGetAllTransaction])
+    
+  }
 
-  
+  const allTrans = getAllTransaction.map((donar) => (
+    <>
+    <TableBody>
+                    <TableRow>
+                    <TableCell>{donar.donorName}</TableCell>
+                      {/* <TableCell>{donar.donorEmail}</TableCell> */}
+                      <TableCell>{donar.transactionId}</TableCell>
+                      <TableCell>{donar.invoiceId}</TableCell>
+                     
+                      {/* <TableCell>{transactionDate}</TableCell> */}
+                      <TableCell>{donar.transactionDate}</TableCell>
+                      <TableCell>{donar.transactionMode}</TableCell>
+                      <TableCell>{donar.amount}</TableCell>
+                    </TableRow>
+                  </TableBody>
+  </>
+  ));
   return (
     <React.Fragment>
       <div style={{ padding: "50px " }}>
@@ -48,16 +75,7 @@ const AllDonar = () => {
           <h2 style={{ color: "grey" }}>
             <center>
             <TextField
-             style={{
-                // color: "white",
-                // marginLeft: "1%",
-                // marginTop: "1%",
-                // marginBottom: "10px",
-                // backgroundColor: "gray",
-                //  : '#1167b1',
-                // paddingLeft: "30px",
-                // paddingRight: "30px",
-              }}
+
                           type="email"
                           fullWidth
                           placeholder="Your Email Id"
@@ -66,14 +84,15 @@ const AllDonar = () => {
                           color="primary"
                           label="Email-Id"
                           required={true}
-                        //   value={donorEmail}
-                        //   onChange={(e) => setDonorEmail(e.target.value)}
-                        //   error={donorEmail !== "" && !isEmailValid(donorEmail)}
-                        //   helperText={
-                        //     donorEmail !== "" && !isEmailValid(donorEmail)
-                        //       ? "Invalid email format"
-                        //       : ""
-                        //   }
+                          value={donorEmail}
+                          onChange={(e) => setDonorEmail(e.target.value)}
+                          error={donorEmail !== "" && !isEmailValid(donorEmail)}
+                          helperText={
+                            donorEmail !== "" && !isEmailValid(donorEmail)
+                              ? "Invalid email format"
+                              : ""
+                              
+                          }
                         />
             </center>
             <center>
@@ -91,8 +110,7 @@ const AllDonar = () => {
                   paddingRight: "30px",
                 }}
                 type="submit"
-                // disabled={isSubmitDisabled}
-                // onClick={fetchDetails}
+                onClick={fetchDetails}
               >
                 Fetch Details
               </Button>
@@ -115,7 +133,7 @@ const AllDonar = () => {
                     >
                       {/* <TableCell sx={{ width: "30%" }}>Email ID</TableCell> */}
                   
-                      
+                      <TableCell>Name</TableCell>
                       <TableCell>Transaction Id</TableCell>
                       <TableCell>Invoice ID</TableCell>
                       <TableCell>Transaction Date</TableCell>
@@ -123,16 +141,7 @@ const AllDonar = () => {
                       <TableCell>Amount</TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody>
-                    <TableRow>
-                    <TableCell>{TransactionId}</TableCell>
-                      <TableCell>{InvoiceID}</TableCell>
-                    
-                      <TableCell>{transactionDate}</TableCell>
-                      <TableCell>{TransactionMode}</TableCell>
-                      <TableCell>{amount}</TableCell>
-                    </TableRow>
-                  </TableBody>
+                  {allTrans}
                 </Table>
               </TableContainer>
             </Grid>
@@ -144,4 +153,3 @@ const AllDonar = () => {
   );
 };
 
-export default AllDonar;
