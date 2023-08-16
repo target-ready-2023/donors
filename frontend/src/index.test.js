@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {App} from './App';
 import { waitFor } from '@testing-library/react';
 
+
+
 jest.mock('./reportWebVitals', () => jest.fn());
 
 function simulateAct(callback) {
@@ -40,3 +42,5 @@ test('calls reportWebVitals', () => {
 
   document.body.removeChild(root);
 });
+
+  
