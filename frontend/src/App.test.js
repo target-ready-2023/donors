@@ -1,18 +1,11 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
-import {App} from './App';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-jest.mock('react-router-dom', () => ({
-  BrowserRouter: ({ children }) => <div>{children}</div>,
-}));
-
-test('renders the PageRoutes component', () => {
-  // Render the App component
-  const { queryByTestId } = render(App);
+test('renders PageRoutes component', () => {
+  render(<App />);
   
-  // Find the PageRoutes component by its test ID
-  const pageRoutesComponent = queryByTestId('page-routes');
-  
-  // Check if the PageRoutes component is rendered
- waitFor(()=> expect(pageRoutesComponent).toBeInTheDocument());
+  // Verify that the PageRoutes component is rendered
+  const pageRoutesElement = screen.getByTestId('page-routes');
+  expect(pageRoutesElement).toBeInTheDocument();
 });

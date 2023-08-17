@@ -221,6 +221,7 @@ const ExistingDonorPage = () => {
                 type="number"
                 variant="filled"
                 label="Amount"
+                placeholder="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
                 fullWidth
@@ -238,6 +239,7 @@ const ExistingDonorPage = () => {
                 label="Transaction mode"
                 fullWidth
                 variant="filled"
+                placeholder="Transaction mode"
                 onChange={handleTransactionModeChange}
                 value={transactionMode}
                 sx={{
@@ -258,8 +260,10 @@ const ExistingDonorPage = () => {
                 required={true}
                 variant="filled"
                 label="Date"
-                value={date.toLocaleDateString('en-GB')}
-                onChange={(e) => setDate(e.target.value)}
+                placeholder="Date"
+
+  value={date.toLocaleDateString('en-GB')}
+  onChange={(e) => setDate(new Date(e.target.value))}
                 fullWidth
                 sx={{
                   width: { sm: 750, md: 600 },

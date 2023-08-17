@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import NotFound from "./NotFound"
-import NewDonor from "./NewDonor"
-import ExistingDonor from "./ExistingDonor"
+import  NewDonor from "./NewCostumer/NewDonor"
+import ExistingDonor from "./ExistingCustomer/ExistingDonor"
+
 import Certificate from "./Certificate"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -25,4 +26,4 @@ const PageRoutes = () => {
         </Routes>
     )
   }
-  export default PageRoutes
+  export default PageRoutes;

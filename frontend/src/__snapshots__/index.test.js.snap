@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App rendering renders the App component without errors 1`] = `
+<div>
+  <div
+    class="App"
+    data-testid="page-routes"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-hip9hq-MuiPaper-root-MuiAppBar-root"
+      style="background-color: rgb(108, 136, 200);"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+        style="display: flex; justify-content: space-between; align-items: center;"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          style="margin-right: 300px; margin-left: 100px;"
+        >
+          <a
+            href="/"
+          >
+            <div
+              class="MuiBox-root css-xf2c8v"
+            >
+              <img
+                alt="logo"
+                class="App-logo"
+                src="DSF_Logo.png"
+                style="max-width: 100%; max-height: 100%;"
+                title="Donors Logo"
+              />
+            </div>
+          </a>
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1npkfdh-MuiTypography-root"
+          style="margin-right: 300px;"
+        >
+          Dream School Foundation
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-1npkfdh-MuiTypography-root"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          <button
+            aria-haspopup="true"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+            data-testid="side-navigation"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1d159sf-MuiSvgIcon-root"
+              data-testid="MenuIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </p>
+      </div>
+    </header>
+    <div
+      data-testid="landing-page"
+    >
+      <img
+        alt="Landing Page Image"
+        src="https://en-media.thebetterindia.com/uploads/2021/09/Project-Dream-School.jpg?compress=true&quality=80&w=800&dpr=1.3"
+        width="100%"
+      />
+      <div
+        class="MuiBox-root css-i9gxme"
+        style="padding-bottom: 30px; padding-top: 30px; padding-left: 110px; background-color: rgb(169, 184, 195);"
+      >
+        <h1
+          style="color: rgb(108, 136, 200); text-align: center; padding-bottom: 15px;"
+        >
+          Giving is not just about making a donation. It is about making a difference.”
+        </h1>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-gj1fbr-MuiGrid-root"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ri6ub7-MuiPaper-root-MuiCard-root"
+            >
+              <img
+                alt="green iguana"
+                class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
+                height="250"
+                src="img2.jpeg"
+              />
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              >
+                <div
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+                >
+                  DONATE
+                </div>
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+                >
+                  Your donations will help us support the education of our children and the School Development programmes. Please refer the programme section
+                </p>
+              </div>
+              <div
+                class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+              >
+                <a
+                  href="/newCustomer"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-8m01t5-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    New Donor
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-gj1fbr-MuiGrid-root"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ri6ub7-MuiPaper-root-MuiCard-root"
+            >
+              <img
+                alt="green iguana"
+                class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
+                height="250"
+                src="img3.jpeg"
+              />
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              >
+                <div
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+                >
+                  DONATE
+                </div>
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+                >
+                  Dream School Foundation is an Indian Registered Trust and donations made to DSF are exempt from tax under Section 80G of the Income Tax Act.
+                </p>
+              </div>
+              <div
+                class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+              >
+                <a
+                  href="/existingCustomer"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1mb1b6c-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    Existing Donor
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-gj1fbr-MuiGrid-root"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ri6ub7-MuiPaper-root-MuiCard-root"
+            >
+              <img
+                alt="green iguana"
+                class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
+                height="250"
+                src="img1.jpeg"
+              />
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              >
+                <div
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+                >
+                  Tax Preparation
+                </div>
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+                >
+                  Dream School Foundation is an Indian Registered Trust and donations made to DSF are exempt from tax under Section 80G of the Income Tax Act.
+                </p>
+              </div>
+              <div
+                class="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+              >
+                <a
+                  href="/certificate"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1mb1b6c-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    80G Certificate
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="MuiBox-root css-uh1pua"
+    >
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-10 css-11reh94-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+          >
+            <h6
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom css-1dxy5kq-MuiTypography-root"
+            >
+              About Us
+            </h6>
+            <hr />
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              Dream School Foundation was established in Bangalore, India in 2005 by a group of passionate volunteers.
+            </p>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+          >
+            <h6
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom css-1dxy5kq-MuiTypography-root"
+            >
+              Contact Us
+            </h6>
+            <hr />
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              123, Hennur Road, Banglore
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              Email: info@dsfindia.org
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              Phone: +91 98440 60478
+            </p>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+          >
+            <h6
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom css-1dxy5kq-MuiTypography-root"
+            >
+              Follow Us
+            </h6>
+            <hr />
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-xdxgn1-MuiTypography-root-MuiLink-root"
+              data-testid="facebook-icon"
+              href="https://www.facebook.com/"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="FacebookIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
+                />
+              </svg>
+            </a>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-t4b8t7-MuiTypography-root-MuiLink-root"
+              data-testid="instagram-icon"
+              href="https://www.instagram.com/"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="InstagramIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+                />
+              </svg>
+            </a>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-xdxgn1-MuiTypography-root-MuiLink-root"
+              data-testid="twitter-icon"
+              href="https://www.twitter.com/"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="TwitterIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-y1gt6f"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1vl95ex-MuiTypography-root"
+          >
+            Copyright © 
+             
+            2023
+             
+             
+             
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-xdxgn1-MuiTypography-root-MuiLink-root"
+              href="https://www.dsfindia.org/"
+            >
+                 Dream School Foundation.
+            </a>
+             
+             All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

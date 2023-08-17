@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" data-testid="page-routes">
-        <PageRoutes/>
+        <PageRoutes />
       </div>
     </BrowserRouter>
   );
