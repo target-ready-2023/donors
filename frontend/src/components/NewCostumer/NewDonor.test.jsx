@@ -1,0 +1,54 @@
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
+import NewDonor from './NewDonor'; 
+
+describe('NewDonor', () => {
+  test('renders and interacts with the form', () => {
+    render(
+      <MemoryRouter>
+        <NewDonor />
+      </MemoryRouter>
+    );
+
+    // Fill out the name input
+    const nameInput = screen.getByPlaceholderText('Name');
+    fireEvent.change(nameInput, { target: { value: 'Muskan' } });
+
+    // Fill out the address input
+    const addressInput = screen.getByPlaceholderText('Address');
+    fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+
+    // Fill out the email input
+    const emailInput = screen.getByPlaceholderText('Your Email-Id');
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+
+    // Fill out the date of birth input
+    const dobInput = screen.getByPlaceholderText('Date of Birth');
+    fireEvent.change(dobInput, { target: { value: '1990-01-01' } });
+
+    // Fill out the PAN input
+    const panInput = screen.getByPlaceholderText('PAN');
+    fireEvent.change(panInput, { target: { value: 'ABCDE1234F' } });
+
+    // Fill out the amount input
+    const amountInput = screen.getByPlaceholderText('Amount');
+    fireEvent.change(amountInput, { target: { value: '1000' } });
+
+    // Select a transaction mode
+    const transactionModeSelect = screen.getByPlaceholderText('Transaction mode');
+    fireEvent.change(transactionModeSelect, { target: { value: 'IMPS' } });
+
+    // Fill out the transaction date input
+    // const transactionDateInput = screen.getByPlaceholderText('Date');
+    // fireEvent.change(transactionDateInput, { target: { value: '2023-08-16' } });
+
+    // // Click the "Submit" button
+    const submitButton = screen.getByText("Submit");
+    expect(submitButton).toBeInTheDocument();
+    fireEvent.click(submitButton);
+
+
+    
+  });
+});
