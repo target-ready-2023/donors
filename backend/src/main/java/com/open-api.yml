@@ -1,0 +1,206 @@
+openapi: 3.0.0
+info:
+  title: 80G Certificate Generation for Donors
+  contact:
+   email: info@dsfindia.org
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+paths:
+  /admin/getAllDonors:
+    get:
+      summary: Retrieve all donor profiles
+      responses:
+        '200':
+          description: Successful response containing donor profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DonorProfileDTO'
+        '204':
+          description: No content, no donors found
+  /admin/getAllTransactions:
+    get:
+      summary: Retrieve all transactions with donor info
+      responses:
+        '200':
+          description: Successful response containing donor transactions with info
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DonorTransactionsDTO'
+        '204':
+          description: No content, no transactions found
+  /admin/getTransactionsWithEmail:
+    get:
+      summary: Retrieve transactions by donor email
+      parameters:
+        - in: query
+          name: donorEmail
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response containing transactions by donor email
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DonorTransactionsDTO'
+        '204':
+          description: No content, no transactions found
+  /donor/addDonor:
+    post:
+      summary: Add a new donor with transactions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DonorProfile'
+      responses:
+        '201':
+          description: Donor added successfully
+        '500':
+          description: Failed to add a new donor
+  /donor/findByEmail:
+    get:
+      summary: Find a donor by email
+      parameters:
+        - in: query
+          name: donorEmail
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response containing donor details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DonorDetailsDTO'
+        '404':
+          description: Donor not found
+  /donor/addTransaction:
+    put:
+      summary: Add a transaction to donor profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionDetailsDTO'
+      responses:
+        '200':
+          description: Transaction added successfully
+        '400':
+          description: Bad request
+        '500':
+          description: Failed to add transaction
+  /email/send:
+    get:
+      summary: Generate email with attachment
+      parameters:
+        - in: query
+          name: donorEmail
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: fiscalYear
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Email with PDF attachment sent successfully
+        '404':
+          description: Donor not found
+        '500':
+          description: Failed to send email with PDF attachment
+components:
+  schemas:
+    DonorProfileDTO:
+      type: object
+      properties:
+        donorID:
+          type: string
+        donorName:
+          type: string
+        donorAddress:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        donorAmount:
+          type: number
+        donorEmail:
+          type: string
+        donorPan:
+          type: string
+    DonorTransactionsDTO:
+      type: object
+      properties:
+        transactionID:
+          type: string
+        transactionDate:
+          type: string
+          format: date-time
+        transactionAmount:
+          type: number
+        donor:
+          $ref: '#/components/schemas/DonorProfileDTO'
+    DonorDetailsDTO:
+      type: object
+      properties:
+        donorID:
+          type: string
+        donorName:
+          type: string
+        donorAddress:
+          type: string
+        donorPan:
+          type: string
+    DonorProfile:
+      type: object
+      properties:
+        donorID:
+          type: string
+        donorName:
+          type: string
+        donorAddress:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        donorEmail:
+          type: string
+        donorPan:
+          type: string
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DonorTransactions'
+    TransactionDetailsDTO:
+      type: object
+      properties:
+        email:
+          type: string
+        transactionDetails:
+          $ref: '#/components/schemas/DonorTransactions'
+    DonorTransactions:
+      type: object
+      properties:
+        amount:
+          type: number
+        transactionDate:
+          type: string
+          format: date-time
+        transactionMode:
+          type: string

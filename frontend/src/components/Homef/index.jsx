@@ -121,6 +121,41 @@ function Homef() {
             </CardActions>
           </Card>
         </Grid>
+        <Grid item xs={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              height="250"
+              image={imga}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Admin
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Dream School Foundation is an Indian Registered Trust and
+                donations made to DSF are exempt from tax under Section 80G of
+                the Income Tax Act.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Link to="/Admin" style={{ textDecoration: "none" }}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    borderRadius: "0px",
+                    marginBottom: "10px",
+                    width: "200px",
+                    marginLeft:"60px",
+                  }}
+                >
+                  Admin
+                </Button>
+              </Link>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   );
