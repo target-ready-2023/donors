@@ -30,7 +30,7 @@ const options = [
 
 
 
-const NewCustomer = () => {
+const NewDonor = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -38,6 +38,7 @@ const NewCustomer = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
+  const [dateInput, setDateInput] = useState('');
   const [date, setDate] = useState(new Date());
   
 
@@ -145,6 +146,7 @@ const NewCustomer = () => {
                 type="text"
                 variant="filled"
                 label="Name"
+                placeholder="Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 fullWidth
@@ -154,6 +156,7 @@ const NewCustomer = () => {
                 type="text"
                 variant="filled"
                 label="Address"
+                placeholder="Address"
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
                 fullWidth
@@ -164,6 +167,7 @@ const NewCustomer = () => {
               <TextField
                 type="email"
                 variant="filled"
+                placeholder="Your Email-Id"
                 label="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -176,6 +180,7 @@ const NewCustomer = () => {
               <TextField
                 type="date"
                 variant="filled"
+                placeholder="Date of Birth"
                 label="Date of Birth"
                 onChange={(e) => setDateOfBirth(e.target.value)}
                 value={dateOfBirth}
@@ -194,6 +199,7 @@ const NewCustomer = () => {
               <TextField
                 type="text"
                 variant="filled"
+                placeholder="PAN"
                 label="PAN"
                 onChange={(e) => setPan(e.target.value)}
                 value={pan}
@@ -207,7 +213,9 @@ const NewCustomer = () => {
               <TextField
                 type="number"
                 variant="filled"
+                placeholder="Amount"
                 label="Amount"
+                name="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
                 fullWidth
@@ -222,6 +230,7 @@ const NewCustomer = () => {
                 select
                 required={true}
                 label="Transaction mode"
+                placeholder="Transaction mode"
                 fullWidth
                 variant="filled"
                 value={transactionMode}
@@ -239,9 +248,10 @@ const NewCustomer = () => {
               <TextField
                 // type="date"
                 variant="filled"
-                label="Transaction Date"
-                onChange={(e) => setDate(e.target.value)}
-                value={date.toLocaleDateString('en-GB')}
+                label="Date"
+                placeholder="Date"
+                value={dateInput}
+                onChange={(e) => setDateInput(e.target.value)}
                 fullWidth
                 required={true}
                 sx={{
@@ -269,10 +279,10 @@ const NewCustomer = () => {
           </form>
         </div>
         <hr style={{ margin: "50px" }} />
-        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingCustomer">EXISTING DONOR</Link></p>
+        <p style={{textAlign:"center",color:"grey",fontSize:"20px",fontWeight:"bold"}}>Already exists? {" "}<Link to="/existingDonor">EXISTING DONOR</Link></p>
       </div>
     </React.Fragment>
   );
 };
 
-export default NewCustomer;
+export default NewDonor;

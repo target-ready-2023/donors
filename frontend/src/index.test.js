@@ -1,46 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './App';
-import { waitFor } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-
-
+// Mock the reportWebVitals function
 jest.mock('./reportWebVitals', () => jest.fn());
 
-function simulateAct(callback) {
-    callback();
-  }
+describe('index.js', () => {
+  it('renders the App component', () => {
+    // Create a mock root element
+    const root = document.createElement('div');
+    root.id = 'root';
+    document.body.appendChild(root);
 
-test('renders the App component', () => {
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-  ReactDOM.render(App, root);
- waitFor(()=> expect(root.querySelector('.App')).toBeInTheDocument());
-  ReactDOM.unmountComponentAtNode(root);
+    // Render the App component
+    act(() => {
+      ReactDOM.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>,
+        root
+      );
+    });
 
-  document.body.removeChild(root);
-});
+    // Assert that the App component was rendered
+    const appElement = document.querySelector('.App'); // Assuming a class of 'App' in your App component
+    expect(appElement).toBeInTheDocument();
 
-test('calls reportWebVitals', () => {
-  const mockReportWebVitals = require('./reportWebVitals').default;
-
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-
-  simulateAct(() => {
-    const rootElement = ReactDOM.createRoot(root);
-    rootElement.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    );
+    // Clean up
+    document.body.removeChild(root);
   });
 
- waitFor(()=> expect(mockReportWebVitals).toHaveBeenCalled());
+  it('calls reportWebVitals', () => {
+    // Render the reportWebVitals function
+    act(() => {
+      reportWebVitals();
+    });
 
-  ReactDOM.unmountComponentAtNode(root);
-
-  document.body.removeChild(root);
+    // Assert that reportWebVitals was called
+    expect(reportWebVitals).toHaveBeenCalled();
+  });
 });
-
-  

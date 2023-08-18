@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -200,23 +200,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -230,7 +228,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -321,21 +321,21 @@ import {
 import {getAllTransaction} from "../../services/ApiService"
 &nbsp;
 &nbsp;
-const AllTransaction = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const [getAllTrans, setGetAllTrans] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
-  const fetchDetails = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
+const AllTransaction = () =&gt; {
+  const [getAllTrans, setGetAllTrans] = useState([]);
+  const fetchDetails = (event) =&gt; {
+    event.preventDefault();
     // console.log("Donor Email : ", donorEmail);
-<span class="cstat-no" title="statement not covered" >    getAllTransaction()</span>
-    .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
-<span class="cstat-no" title="statement not covered" >      setGetAllTrans(response.data);</span>
-<span class="cstat-no" title="statement not covered" >      console.log("response : ", response.data);</span>
+    getAllTransaction()
+    .then(response =&gt; {
+      setGetAllTrans(response.data);
+      console.log("response : ", response.data);
     },[setGetAllTrans])
     
   }
 &nbsp;
-  const allTrans = <span class="cstat-no" title="statement not covered" >getAllTrans.map(<span class="fstat-no" title="function not covered" >(d</span>onar) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
+  const allTrans = getAllTrans.map((donar) =&gt; (
+    &lt;&gt;
     &lt;TableBody&gt;
                     &lt;TableRow&gt;
                       &lt;TableCell&gt;{donar.donorName}&lt;/TableCell&gt;
@@ -351,7 +351,7 @@ const AllTransaction = <span class="cstat-no" title="statement not covered" ><sp
   &lt;/&gt;
   ));
   
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;React.Fragment&gt;
       &lt;div style={{ padding: "50px " }}&gt;
         &lt;div
@@ -433,7 +433,7 @@ export default AllTransaction;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-18T04:12:19.466Z
+                at 2023-08-18T04:14:05.677Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
