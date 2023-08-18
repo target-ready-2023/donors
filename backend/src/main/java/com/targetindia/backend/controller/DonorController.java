@@ -35,7 +35,7 @@ public class DonorController {
     }
 
 //    API for adding donor details to database
-    @PostMapping("/addDonor")
+    @PostMapping("/add")
     public ResponseEntity<String> addDonor(@RequestBody DonorProfile donor){
         try {
             int i = 0;
@@ -54,7 +54,7 @@ public class DonorController {
     }
 
 //    API for finding a donor details(donor_id, donor_name, donor_address, donor_pan) by checking with email in database
-    @GetMapping("/findByEmail")
+    @GetMapping("/find")
     public ResponseEntity<?> getDonorByEmail(@RequestParam String donorEmail) {
         DonorDetailsDTO donor = donorService.findDonorByEmail(donorEmail);
         if (donor != null) {
@@ -66,7 +66,7 @@ public class DonorController {
         }
     }
 
-    @PutMapping("/addTransaction")
+    @PutMapping("/transaction")
     public ResponseEntity<String> addTransactionToDonorProfile(@RequestBody TransactionDetailsDTO transactionDTO) {
         DonorTransactions transactionDetails = transactionDTO.getTransactionDetails();
         String email = transactionDTO.getEmail();

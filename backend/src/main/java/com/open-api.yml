@@ -7,7 +7,7 @@ info:
 servers:
   - url: http://localhost:8080/api
 paths:
-  /admin/getAllDonors:
+  /admin/donors:
     get:
       summary: Retrieve all donor profiles
       responses:
@@ -21,7 +21,7 @@ paths:
                   $ref: '#/components/schemas/DonorProfileDTO'
         '204':
           description: No content, no donors found
-  /admin/getAllTransactions:
+  /admin/transactions:
     get:
       summary: Retrieve all transactions with donor info
       responses:
@@ -35,7 +35,7 @@ paths:
                   $ref: '#/components/schemas/DonorTransactionsDTO'
         '204':
           description: No content, no transactions found
-  /admin/getTransactionsWithEmail:
+  /admin/transactionsWithEmail:
     get:
       summary: Retrieve transactions by donor email
       parameters:
@@ -55,7 +55,7 @@ paths:
                   $ref: '#/components/schemas/DonorTransactionsDTO'
         '204':
           description: No content, no transactions found
-  /donor/addDonor:
+  /donor/add:
     post:
       summary: Add a new donor with transactions
       requestBody:
@@ -69,7 +69,7 @@ paths:
           description: Donor added successfully
         '500':
           description: Failed to add a new donor
-  /donor/findByEmail:
+  /donor/find:
     get:
       summary: Find a donor by email
       parameters:
@@ -87,7 +87,7 @@ paths:
                 $ref: '#/components/schemas/DonorDetailsDTO'
         '404':
           description: Donor not found
-  /donor/addTransaction:
+  /donor/transaction:
     put:
       summary: Add a transaction to donor profile
       requestBody:

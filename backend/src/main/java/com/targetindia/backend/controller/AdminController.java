@@ -37,7 +37,7 @@ public class AdminController {
         this.donorRepository = donorRepository;
     }
 
-    @GetMapping("/getAllDonors")
+    @GetMapping("/donors")
     public ResponseEntity<?> getAllDonors() {
         List<DonorProfileDTO> donorDTOs = donorService.getAllDonors();
         if(donorDTOs.isEmpty()) {
@@ -47,7 +47,7 @@ public class AdminController {
             return ResponseEntity.ok(donorDTOs);
         }
     }
-    @GetMapping("/getAllTransactions")
+    @GetMapping("/transactions")
     public ResponseEntity<List<DonorTransactionsDTO>> getAllTransactionsWithDonorInfo(){
         List<DonorTransactionsDTO> AllTransactions = transactionService.getAllTransactionsWithDonorInfo();
         if(AllTransactions.isEmpty()) {
@@ -58,7 +58,7 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/getTransactionsWithEmail")
+    @GetMapping("/transactionsWithEmail")
     public ResponseEntity<List<DonorTransactionsDTO>> getTransactionsWithEmail(@RequestParam String donorEmail){
         List<DonorTransactionsDTO> AllTransactions = transactionService.getTransactionsByDonorEmail(donorEmail);
         if(AllTransactions.isEmpty()) {
