@@ -8,7 +8,7 @@ import Footer from "./Footer"
 import LandingPage from "./LandingPage"
 import AllDonor from "./Admin/AllDonor"
 import AllTransaction from "./Admin/AllTransaction"
-import SingleDonor from "./Admin/TransactionOfParticularDonor"
+import SingleDonor from "./Admin/SingleDonor"
 import AdminPage from "./Admin/AdminPage"
 const PageRoutes = () => {
     return (

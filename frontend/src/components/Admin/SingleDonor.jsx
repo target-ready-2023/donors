@@ -14,7 +14,7 @@ import {
 
 import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
- export  const SingleDonor = () => {
+   const SingleDonor = () => {
   const [donorEmail, setDonorEmail] = useState("");
   
   const isEmailValid = (donorEmail) => {
@@ -153,3 +153,4 @@ import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
   );
 };
 
+export default SingleDonor;

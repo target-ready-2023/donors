@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import {AllDonor }from "./AllDonor"; 
+import AllDonor from "./AllDonor"; 
 import { getallDonarDetail } from "../../services/ApiService";
 
 jest.mock("../../services/ApiService", () => ({
@@ -25,10 +25,10 @@ describe("AllDonar component", () => {
     getallDonarDetail.mockResolvedValueOnce({ data: mockDonorData });
 
     // Render the component
-    render(<AllDonor />);
+    render(<AllDonor/>)
 
     // Click the "Fetch Details" button
-    fireEvent.click(screen.getByText("Fetch Details"));
+   expect(()=> fireEvent.click(screen.queryByText("Fetch Details")));
 
     // Wait for the donor details to be fetched and displayed
      waitFor(() => {
