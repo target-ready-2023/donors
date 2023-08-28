@@ -296,8 +296,5 @@ const ExistingDonorPage = () => {
     </React.Fragment>
   );
 };
-<<<<<<<< HEAD:frontend/src/components/ExistingCostumer/ExistingDonor.jsx
-========
 
->>>>>>>> main:frontend/src/components/ExistingDonor/index.jsx
 export default ExistingDonorPage;

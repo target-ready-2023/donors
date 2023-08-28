@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693203929072" clover="3.2.0">
-  <project timestamp="1693203929072" name="All files">
-    <metrics statements="228" coveredstatements="181" conditionals="32" coveredconditionals="25" methods="85" coveredmethods="62" elements="345" coveredelements="268" complexity="0" loc="228" ncloc="228" packages="14" files="19" classes="19"/>
+<coverage generated="1693206024743" clover="3.2.0">
+  <project timestamp="1693206024743" name="All files">
+    <metrics statements="227" coveredstatements="180" conditionals="32" coveredconditionals="25" methods="85" coveredmethods="62" elements="344" coveredelements="267" complexity="0" loc="227" ncloc="227" packages="14" files="19" classes="19"/>
     <package name="src">
       <metrics statements="12" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="2"/>
       <file name="App.js" path="/Users/Z00D0VG/Desktop/80G/donors/frontend/src/App.js">
@@ -218,9 +218,9 @@
       </file>
     </package>
     <package name="src.components.NewCostumer">
-      <metrics statements="46" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
+      <metrics statements="45" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
       <file name="NewDonor.jsx" path="/Users/Z00D0VG/Desktop/80G/donors/frontend/src/components/NewCostumer/NewDonor.jsx">
-        <metrics statements="46" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
+        <metrics statements="45" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
         <line num="7" count="3" type="stmt"/>
         <line num="33" count="3" type="stmt"/>
         <line num="34" count="8" type="stmt"/>
@@ -230,7 +230,6 @@
         <line num="38" count="8" type="stmt"/>
         <line num="39" count="8" type="stmt"/>
         <line num="40" count="8" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
         <line num="42" count="8" type="stmt"/>
         <line num="45" count="8" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
@@ -266,7 +265,7 @@
         <line num="204" count="1" type="stmt"/>
         <line num="219" count="1" type="stmt"/>
         <line num="243" count="40" type="stmt"/>
-        <line num="254" count="0" type="stmt"/>
+        <line num="253" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.NotFound">

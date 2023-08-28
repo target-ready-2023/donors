@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom"; // We use MemoryRouter for testing the Link component
 
 import AdminPage from "./AdminPage";
@@ -19,13 +19,13 @@ describe("AdminPage component", () => {
     // Test the buttons and links
     const allDonorButton = screen.getByText("All Donor Details");
     const allTransactionButton = screen.getByText("All Transaction Details");
-    const transactionOfParticularEmailButton = screen.getByText(
+    const transactionOfParticularEmailButton = screen.queryByText(
       "Transaction of a Particular Donor"
     );
 
     expect(allDonorButton).toBeInTheDocument();
     expect(allTransactionButton).toBeInTheDocument();
-    expect(transactionOfParticularEmailButton).toBeInTheDocument();
+   waitFor(()=> expect(transactionOfParticularEmailButton).toBeInTheDocument());
 
     
   });

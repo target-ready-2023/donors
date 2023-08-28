@@ -38,7 +38,7 @@ const NewDonor = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
-  const [dateInput, setDateInput] = useState('');
+  
   const [date, setDate] = useState(new Date());
   
 
@@ -250,8 +250,8 @@ const NewDonor = () => {
                 variant="filled"
                 label="Date"
                 placeholder="Date"
-                value={dateInput}
-                onChange={(e) => setDateInput(e.target.value)}
+                onChange={(e) => setDate(e.target.value)}
+                value={date.toLocaleDateString('en-GB')}
                 fullWidth
                 required={true}
                 sx={{
