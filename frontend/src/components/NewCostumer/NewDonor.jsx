@@ -3,7 +3,6 @@ import { TextField, Button, Stack, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import { addDonorInfo} from "../../services/ApiService";
-
 const options = [
   {
     label: "UPI",
@@ -26,10 +25,6 @@ const options = [
     value: 5,
   },
 ];
-
-
-
-
 const NewDonor = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -38,10 +33,7 @@ const NewDonor = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
-  
   const [date, setDate] = useState(new Date());
-  
-
   const handleTransactionModeChange = (e) => {
     setTransactionMode(e.target.value); // Update the state with the selected label
   };
@@ -52,26 +44,20 @@ const NewDonor = () => {
   const year = selectedDate.getFullYear();
   return `${day}-${month}-${year}`;
 };
-
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date());
     }, 1000);
-
     return () => {
       clearInterval(intervalId);
     };
   }, []);
-
   const formatDate = (date) => {
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
     const year = date.getFullYear();
     return `${day}-${month}-${year}`;
   };
- 
-
   const addDonorDetails = (e) => {
       e.preventDefault();
     const data = {
@@ -86,7 +72,6 @@ const NewDonor = () => {
         transactionDate : formatDate(date)
       }]
     };
-    
     console.log(data)
     addDonorInfo(data)
     .then(response => {
@@ -104,14 +89,13 @@ const NewDonor = () => {
       console.log("Error : ", error);
     });
   }
-
   return (
     <React.Fragment>
       <div style={{padding:"50px"}}>
         <p style={{color:"grey",fontWeight:"bold",fontSize:"20px",marginLeft:"70px",marginRight:"70px"}}>
           DSF is a development organization working towards the goal of
           quality and equity in education and making a happy childhood a reality
-          for the children. 
+          for the children.
           The support from civil society that believes in the
           premise that, education is the most sustainable instrument in nation
           building and creating livelihoods, is crucial to make this mission a
@@ -126,7 +110,6 @@ const NewDonor = () => {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-
             border: "3px solid grey",
           }}
         >
@@ -146,7 +129,6 @@ const NewDonor = () => {
                 type="text"
                 variant="filled"
                 label="Name"
-                placeholder="Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 fullWidth
@@ -156,7 +138,6 @@ const NewDonor = () => {
                 type="text"
                 variant="filled"
                 label="Address"
-                placeholder="Address"
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
                 fullWidth
@@ -167,7 +148,6 @@ const NewDonor = () => {
               <TextField
                 type="email"
                 variant="filled"
-                placeholder="Your Email-Id"
                 label="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -180,7 +160,6 @@ const NewDonor = () => {
               <TextField
                 type="date"
                 variant="filled"
-                placeholder="Date of Birth"
                 label="Date of Birth"
                 onChange={(e) => setDateOfBirth(e.target.value)}
                 value={dateOfBirth}
@@ -194,12 +173,10 @@ const NewDonor = () => {
                 }}
               />
             </Stack>
-
             <Stack spacing={8} direction="row" sx={{ marginBottom: 4 }}>
               <TextField
                 type="text"
                 variant="filled"
-                placeholder="PAN"
                 label="PAN"
                 onChange={(e) => setPan(e.target.value)}
                 value={pan}
@@ -209,13 +186,10 @@ const NewDonor = () => {
                   mb: 4,
                 }}
               />
-
               <TextField
                 type="number"
                 variant="filled"
-                placeholder="Amount"
                 label="Amount"
-                name="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
                 fullWidth
@@ -230,7 +204,6 @@ const NewDonor = () => {
                 select
                 required={true}
                 label="Transaction mode"
-                placeholder="Transaction mode"
                 fullWidth
                 variant="filled"
                 value={transactionMode}
@@ -248,8 +221,7 @@ const NewDonor = () => {
               <TextField
                 // type="date"
                 variant="filled"
-                label="Date"
-                placeholder="Date"
+                label="Transaction Date"
                 onChange={(e) => setDate(e.target.value)}
                 value={date.toLocaleDateString('en-GB')}
                 fullWidth
@@ -268,7 +240,7 @@ const NewDonor = () => {
                 color: "white",
                 marginLeft: "4%",
                 marginBottom: "5%",
-                backgroundColor: "#1167b1",
+                backgroundColor: "#1167B1",
                 paddingLeft: "30px",
                 paddingRight: "30px",
               }}
@@ -284,5 +256,4 @@ const NewDonor = () => {
     </React.Fragment>
   );
 };
-
 export default NewDonor;

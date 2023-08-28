@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693206024743" clover="3.2.0">
-  <project timestamp="1693206024743" name="All files">
-    <metrics statements="227" coveredstatements="180" conditionals="32" coveredconditionals="25" methods="85" coveredmethods="62" elements="344" coveredelements="267" complexity="0" loc="227" ncloc="227" packages="14" files="19" classes="19"/>
+<coverage generated="1693207237770" clover="3.2.0">
+  <project timestamp="1693207237770" name="All files">
+    <metrics statements="227" coveredstatements="159" conditionals="32" coveredconditionals="25" methods="85" coveredmethods="51" elements="344" coveredelements="235" complexity="0" loc="227" ncloc="227" packages="14" files="19" classes="19"/>
     <package name="src">
       <metrics statements="12" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="2"/>
       <file name="App.js" path="/Users/Z00D0VG/Desktop/80G/donors/frontend/src/App.js">
@@ -218,54 +218,54 @@
       </file>
     </package>
     <package name="src.components.NewCostumer">
-      <metrics statements="45" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
+      <metrics statements="45" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="4"/>
       <file name="NewDonor.jsx" path="/Users/Z00D0VG/Desktop/80G/donors/frontend/src/components/NewCostumer/NewDonor.jsx">
-        <metrics statements="45" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="14"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="34" count="8" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
-        <line num="36" count="8" type="stmt"/>
-        <line num="37" count="8" type="stmt"/>
-        <line num="38" count="8" type="stmt"/>
-        <line num="39" count="8" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
-        <line num="45" count="8" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <metrics statements="45" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="4"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="57" count="8" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-        <line num="75" count="8" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="108" count="8" type="stmt"/>
-        <line num="150" count="1" type="stmt"/>
-        <line num="160" count="1" type="stmt"/>
-        <line num="172" count="1" type="stmt"/>
-        <line num="185" count="1" type="stmt"/>
-        <line num="204" count="1" type="stmt"/>
-        <line num="219" count="1" type="stmt"/>
-        <line num="243" count="40" type="stmt"/>
-        <line num="253" count="0" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="181" count="0" type="stmt"/>
+        <line num="193" count="0" type="stmt"/>
+        <line num="216" count="5" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.NotFound">
@@ -304,16 +304,16 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="19" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
+      <metrics statements="19" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
       <file name="ApiService.js" path="/Users/Z00D0VG/Desktop/80G/donors/frontend/src/services/ApiService.js">
-        <metrics statements="19" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
+        <metrics statements="19" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
         <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
         <line num="12" count="5" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
