@@ -14,7 +14,7 @@ import {
 
 import {getAllTransactionOfParticularDonor} from "../../services/ApiService"
 
-const AllDonar = () => {
+   const SingleDonor = () => {
   const [donorEmail, setDonorEmail] = useState("");
   
   const isEmailValid = (donorEmail) => {
@@ -75,16 +75,7 @@ const AllDonar = () => {
           <h2 style={{ color: "grey" }}>
             <center>
             <TextField
-             style={{
-                // color: "white",
-                // marginLeft: "1%",
-                // marginTop: "1%",
-                // marginBottom: "10px",
-                // backgroundColor: "gray",
-                //  : '#1167b1',
-                // paddingLeft: "30px",
-                // paddingRight: "30px",
-              }}
+
                           type="email"
                           fullWidth
                           placeholder="Your Email Id"
@@ -100,6 +91,7 @@ const AllDonar = () => {
                             donorEmail !== "" && !isEmailValid(donorEmail)
                               ? "Invalid email format"
                               : ""
+                              
                           }
                         />
             </center>
@@ -118,7 +110,6 @@ const AllDonar = () => {
                   paddingRight: "30px",
                 }}
                 type="submit"
-                // disabled={isSubmitDisabled}
                 onClick={fetchDetails}
               >
                 Fetch Details
@@ -162,4 +153,4 @@ const AllDonar = () => {
   );
 };
 
-export default AllDonar;
+export default SingleDonor;

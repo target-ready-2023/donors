@@ -14,7 +14,7 @@ import {
 
 import {getallDonarDetail} from "../../services/ApiService"
 
-const AllDonar = () => {
+ const AllDonor = () => {
   const [getAllDonarsDetail, setGetAllDonarsDetail] = useState([]);
   const fetchDetails = (event) => {
     event.preventDefault();
@@ -124,5 +124,4 @@ const AllDonar = () => {
     </React.Fragment>
   );
 };
-
-export default AllDonar;
+export default AllDonor;

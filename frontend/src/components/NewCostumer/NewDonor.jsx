@@ -38,6 +38,7 @@ const NewDonor = () => {
   const [pan, setPan] = useState("");
   const [amount, setAmount] = useState("");
   const [transactionMode, setTransactionMode] = useState('UPI');
+  const [dateInput, setDateInput] = useState('');
   const [date, setDate] = useState(new Date());
   
 
@@ -145,6 +146,7 @@ const NewDonor = () => {
                 type="text"
                 variant="filled"
                 label="Name"
+                placeholder="Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 fullWidth
@@ -154,6 +156,7 @@ const NewDonor = () => {
                 type="text"
                 variant="filled"
                 label="Address"
+                placeholder="Address"
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
                 fullWidth
@@ -164,6 +167,7 @@ const NewDonor = () => {
               <TextField
                 type="email"
                 variant="filled"
+                placeholder="Your Email-Id"
                 label="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -176,6 +180,7 @@ const NewDonor = () => {
               <TextField
                 type="date"
                 variant="filled"
+                placeholder="Date of Birth"
                 label="Date of Birth"
                 onChange={(e) => setDateOfBirth(e.target.value)}
                 value={dateOfBirth}
@@ -194,6 +199,7 @@ const NewDonor = () => {
               <TextField
                 type="text"
                 variant="filled"
+                placeholder="PAN"
                 label="PAN"
                 onChange={(e) => setPan(e.target.value)}
                 value={pan}
@@ -207,7 +213,9 @@ const NewDonor = () => {
               <TextField
                 type="number"
                 variant="filled"
+                placeholder="Amount"
                 label="Amount"
+                name="Amount"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
                 fullWidth
@@ -222,6 +230,7 @@ const NewDonor = () => {
                 select
                 required={true}
                 label="Transaction mode"
+                placeholder="Transaction mode"
                 fullWidth
                 variant="filled"
                 value={transactionMode}
@@ -239,9 +248,10 @@ const NewDonor = () => {
               <TextField
                 // type="date"
                 variant="filled"
-                label="Transaction Date"
-                onChange={(e) => setDate(e.target.value)}
-                value={date.toLocaleDateString('en-GB')}
+                label="Date"
+                placeholder="Date"
+                value={dateInput}
+                onChange={(e) => setDateInput(e.target.value)}
                 fullWidth
                 required={true}
                 sx={{
